@@ -51,4 +51,93 @@
       direction: rtl;
       text-align: right;
       transition: transform 0.2s ease, box-shadow 0.3s ease;
-      box-sizing: border-box
+      box-sizing: border-box;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .button-with-icon:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .button-with-icon img {
+      width: 26px;
+      height: 26px;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #bbb, transparent);
+      margin: 40px 0;
+    }
+
+    footer h5 {
+      margin-bottom: 15px;
+      color: #444;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .social-icons a {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #f2f2f2;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      background: #ddd;
+      transform: scale(1.1);
+    }
+
+    .social-icons img {
+      width: 60%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Chipia | بومرنگ</h1>
+  <p>&#x1FA83; بچرخ تا بچرخیم</p>
+
+  <a class="button-with-icon" href="https://www.chipia.ir" target="_blank" rel="noopener noreferrer">
+    <img src="https://raw.githubusercontent.com/abbas-rasekh/Chipia.ir/refs/heads/main/chipia.png" alt="Chipia Icon">
+    <span>چیپیا</span>
+  </a>
+
+  <a class="button-with-icon" href="https://chipia.ir" target="_blank" rel="noopener noreferrer">
+    <img src="https://raw.githubusercontent.com/alrzabs/aratell.ir/refs/heads/main/Nobitex.png" alt="Nobitex Icon">
+    <span>چیپیا</span>
+  </a>
+
+  <hr />
+
+  <footer>
+    <h5>...ما را در شبکه های اجتماعی دنبال کنید</h5>
+    <div class="social-icons">
+      <a href="https://instagram.com/chipia.ir" target="_blank">
+        <img src="https://raw.githubusercontent.com/abbas-rasekh/Chipia.ir/refs/heads/main/2111463.png" alt="Instagram">
+      </a>
+      <a href="https://www.tiktok.com/@chipia.ir" target="_blank">
+        <img
+          src="https://raw.githubusercontent.com/abbas-rasekh/Chipia.ir/refs/heads/main/square-tiktok-logo-on-a-transparent-background-free-png.webp"
+          alt="TikTok">
+      </a>
+      <a href="https://youtube.com/@chipia_ir" target="_blank">
+        <img src="https://raw.githubusercontent.com/abbas-rasekh/Chipia.ir/refs/heads/main/1384060.png" alt="YouTube">
+      </a>
+    </div>
+  </footer>
+</body>
+
+      </html>
