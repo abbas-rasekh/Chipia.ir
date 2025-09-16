@@ -7,33 +7,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#000000">
 
-  <!-- Preload فونت Vazir از jsDelivr -->
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/woff2/Vazir.woff2"
-        as="font" type="font/woff2" crossorigin>
+  <!-- Preload فونت Vazir از Google Fonts -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" as="style">
+
+  <!-- لود Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
 
   <style>
-    /* فونت Vazir از jsDelivr */
-    @font-face {
-      font-family: 'Vazir';
-      src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/woff2/Vazir.woff2') format('woff2');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    html {
-      min-height: 100%;
-      background: linear-gradient(135deg, #f9f9f9, #ececec);
-    }
-
     body {
-      background: transparent;
+      font-family: 'Vazirmatn', "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
       min-height: 100vh;
-      font-family: 'Vazir', "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
       text-align: center;
       padding: 50px 20px;
       color: #333;
       margin: 0;
+      background: linear-gradient(135deg, #f9f9f9, #ececec);
     }
 
     h1 { font-size: 2.2rem; color: #111; margin-bottom: 10px; }
@@ -64,6 +52,7 @@
 
     hr { border: none; height: 1px; background: linear-gradient(to right, transparent, #bbb, transparent); margin: 40px 0; }
 
+    /* بقیه استایل‌ها مثل نسخه قبلی حفظ شده */
     .floating-social-btn {
       position: fixed; right: 30px; bottom: 90px; z-index: 999;
       display: flex; flex-direction: column; align-items: center;
@@ -92,7 +81,7 @@
       margin-top: 8px; font-size: 15px; color: #666;
       background: rgba(255,255,255,0.85); border-radius: 8px; padding: 2px 12px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.07);
-      font-family: 'Vazir', sans-serif; text-align: center; direction: rtl;
+      font-family: 'Vazirmatn', sans-serif; text-align: center; direction: rtl;
       pointer-events: none; user-select: none;
     }
 
@@ -111,11 +100,6 @@
 
   <a class="button-with-icon" href="https://www.chipia.ir" target="_blank" rel="noopener noreferrer">
     <img src="https://raw.githubusercontent.com/abbas-rasekh/Chipia.ir/refs/heads/main/Chipia-logo-croped.png" alt="Chipia Icon">
-    <span>چیپیا</span>
-  </a>
-
-  <a class="button-with-icon" href="https://chipia.ir" target="_blank" rel="noopener noreferrer">
-    <img src="https://raw.githubusercontent.com/abbas-rasekh/Chipia.ir/refs/heads/main/Chipia-logo-croped.png" alt="Nobitex Icon">
     <span>چیپیا</span>
   </a>
 
