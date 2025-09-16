@@ -7,25 +7,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#000000">
 
-  <!-- Preload فونت Vazir از Google Fonts -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" as="style">
+  <!-- فونت (Google Fonts - Vazirmatn) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- لود Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+  <!-- فاو آیکون -->
+  <link rel="icon" type="image/png" href="/images/favicon.jpg">
 
   <style>
+    html {
+      min-height: 100%;
+      background: linear-gradient(135deg, #f9f9f9, #ececec);
+    }
     body {
-      font-family: 'Vazirmatn', "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+      background: transparent;
       min-height: 100vh;
+      font-family: 'Vazirmatn', "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
       text-align: center;
       padding: 50px 20px;
       color: #333;
       margin: 0;
-      background: linear-gradient(135deg, #f9f9f9, #ececec);
     }
 
-    h1 { font-size: 2.2rem; color: #111; margin-bottom: 10px; }
-    p { font-size: 1.1rem; color: #666; }
+    h1 {
+      font-size: 2.2rem;
+      color: #111;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #666;
+    }
 
     .button-with-icon {
       display: flex;
@@ -47,44 +61,100 @@
       box-sizing: border-box;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
-    .button-with-icon:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); }
-    .button-with-icon img { width: 26px; height: 26px; }
 
-    hr { border: none; height: 1px; background: linear-gradient(to right, transparent, #bbb, transparent); margin: 40px 0; }
+    .button-with-icon:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
 
-    /* بقیه استایل‌ها مثل نسخه قبلی حفظ شده */
+    .button-with-icon img {
+      width: 26px;
+      height: 26px;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #bbb, transparent);
+      margin: 40px 0;
+    }
+
+    /* دکمه شناور شبکه‌های اجتماعی */
     .floating-social-btn {
-      position: fixed; right: 30px; bottom: 90px; z-index: 999;
-      display: flex; flex-direction: column; align-items: center;
+      position: fixed;
+      right: 30px;
+      bottom: 90px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .main-fab {
-      width: 60px; height: 60px; border-radius: 50%;
-      background: #ffffff; display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.18); cursor: pointer; transition: background 0.2s;
-      border: none; outline: none;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+      cursor: pointer;
+      transition: background 0.2s;
+      border: none;
+      outline: none;
     }
-    .main-fab img { width: 34px; height: 34px; }
+    .main-fab img {
+      width: 34px;
+      height: 34px;
+    }
     .fab-menu {
-      display: flex; flex-direction: column; gap: 12px; position: absolute;
-      bottom: 110px; right: 30px; opacity: 0; visibility: hidden; transition: opacity 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: absolute;
+      bottom: 110px;
+      right: 30;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s;
     }
-    .fab-menu.show { opacity: 1; visibility: visible; }
+    .fab-menu.show {
+      opacity: 1;
+      visibility: visible;
+    }
     .fab-menu a {
-      width: 48px; height: 48px; border-radius: 50%; background: #fff;
-      display: flex; align-items: center; justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       box-shadow: 0 2px 8px rgba(0,0,0,0.10);
       transition: background 0.2s, transform 0.2s;
     }
-    .fab-menu a:hover { background: #eee; transform: scale(1.12); }
-    .fab-menu img { width: 60%; height: auto; }
-    .floating-caption {
-      margin-top: 8px; font-size: 15px; color: #666;
-      background: rgba(255,255,255,0.85); border-radius: 8px; padding: 2px 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.07);
-      font-family: 'Vazirmatn', sans-serif; text-align: center; direction: rtl;
-      pointer-events: none; user-select: none;
+    .fab-menu a:hover {
+      background: #eee;
+      transform: scale(1.12);
     }
-
+    .fab-menu img {
+      width: 60%;
+      height: auto;
+    }
+    .floating-caption {
+      margin-top: 8px;
+      font-size: 15px;
+      color: #666;
+      background: rgba(255,255,255,0.85);
+      border-radius: 8px;
+      padding: 2px 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+      font-family: 'Vazirmatn', sans-serif;
+      text-align: center;
+      direction: rtl;
+      pointer-events: none;
+      user-select: none;
+    }
     @media (max-width:600px) {
       .floating-social-btn { right: 16px; bottom: 24px; }
       .main-fab { width: 52px; height: 52px; }
@@ -99,33 +169,41 @@
   <p>&#x1FA83; بچرخ تا بچرخیم</p>
 
   <a class="button-with-icon" href="https://www.chipia.ir" target="_blank" rel="noopener noreferrer">
-    <img src="/Chipia-logo-croped.png" alt="Chipia logo">
+    <img src="/images/Chipia-logo-croped.png" alt="Chipia Icon">
+    <span>چیپیا</span>
+  </a>
+
+  <a class="button-with-icon" href="https://chipia.ir" target="_blank" rel="noopener noreferrer">
+    <img src="/images/Chipia-logo-croped.png" alt="Nobitex Icon">
     <span>چیپیا</span>
   </a>
 
   <hr />
 
+  <!-- دکمه شناور شبکه‌های اجتماعی -->
   <div class="floating-social-btn">
     <button class="main-fab" id="fabToggle" aria-label="شبکه‌های اجتماعی">
-      <img src="https://raw.githubusercontent.com/abbas-rasekh/Chipia.ir/refs/heads/main/Chipia-logo-croped.png" alt="Social Media">
+      <img src="/images/Chipia-logo-croped.png" alt="Social Media">
     </button>
     <div class="fab-menu" id="fabMenu">
       <a href="https://instagram.com/chipia.ir" target="_blank" title="Instagram">
-        <img src="https://raw.githubusercontent.com/abbas-rasekh/Chipia.ir/refs/heads/main/2111463.png" alt="Instagram">
+        <img src="/images/instagram.png" alt="Instagram">
       </a>
       <a href="https://www.tiktok.com/@chipia.ir" target="_blank" title="TikTok">
-        <img src="https://raw.githubusercontent.com/abbas-rasekh/Chipia.ir/refs/heads/main/square-tiktok-logo-on-a-transparent-background-free-png.webp" alt="TikTok">
+        <img src="/images/tiktok.webp" alt="TikTok">
       </a>
       <a href="https://youtube.com/@chipia_ir" target="_blank" title="YouTube">
-        <img src="https://raw.githubusercontent.com/abbas-rasekh/Chipia.ir/refs/heads/main/1384060.png" alt="YouTube">
+        <img src="/images/youtube.png" alt="YouTube">
       </a>
     </div>
     <div class="floating-caption">چیپیا در فجازی</div>
   </div>
 
-  <footer></footer>
+  <footer>
+  </footer>
 
   <script>
+    // باز و بسته شدن منوی شناور
     const fabToggle = document.getElementById('fabToggle');
     const fabMenu = document.getElementById('fabMenu');
     fabToggle.addEventListener('click', function (e) {
@@ -139,5 +217,4 @@
     });
   </script>
 </body>
-
-</html>
+      </html>
