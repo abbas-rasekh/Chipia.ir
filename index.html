@@ -7,14 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#000000">
 
-  <!-- فونت (Google Fonts - Vazirmatn) -->
-  <link href="https://github.com/abbas-rasekh/Chipia.ir/raw/refs/heads/main/Vazir.woff2" rel="stylesheet">
-
-  <!-- فاو آیکون -->
-  <link rel="icon" type="image/png"
-    href="https://raw.githubusercontent.com/abbas-rasekh/Chipia.ir/refs/heads/main/favicon.jpg">
+  <!-- Preload فونت Vazir -->
+  <link rel="preload" href="https://github.com/abbas-rasekh/Chipia.ir/raw/refs/heads/main/Vazir.woff2" 
+        as="font" type="font/woff2" crossorigin>
 
   <style>
+    /* فونت Vazir */
+    @font-face {
+      font-family: 'Vazir';
+      src: url('https://github.com/abbas-rasekh/Chipia.ir/raw/refs/heads/main/Vazir.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
     html {
       min-height: 100%;
       background: linear-gradient(135deg, #f9f9f9, #ececec);
@@ -22,23 +28,15 @@
     body {
       background: transparent;
       min-height: 100vh;
-      font-family: 'Vazirmatn', "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+      font-family: 'Vazir', "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
       text-align: center;
       padding: 50px 20px;
       color: #333;
       margin: 0;
     }
 
-    h1 {
-      font-size: 2.2rem;
-      color: #111;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1.1rem;
-      color: #666;
-    }
+    h1 { font-size: 2.2rem; color: #111; margin-bottom: 10px; }
+    p { font-size: 1.1rem; color: #666; }
 
     .button-with-icon {
       display: flex;
@@ -60,100 +58,43 @@
       box-sizing: border-box;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
+    .button-with-icon:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); }
+    .button-with-icon img { width: 26px; height: 26px; }
 
-    .button-with-icon:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-    }
+    hr { border: none; height: 1px; background: linear-gradient(to right, transparent, #bbb, transparent); margin: 40px 0; }
 
-    .button-with-icon img {
-      width: 26px;
-      height: 26px;
-    }
-
-    hr {
-      border: none;
-      height: 1px;
-      background: linear-gradient(to right, transparent, #bbb, transparent);
-      margin: 40px 0;
-    }
-
-    /* دکمه شناور شبکه‌های اجتماعی - راست پایین و کمی بالاتر */
     .floating-social-btn {
-      position: fixed;
-      right: 30px;
-      bottom: 90px;
-      z-index: 999;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      position: fixed; right: 30px; bottom: 90px; z-index: 999;
+      display: flex; flex-direction: column; align-items: center;
     }
     .main-fab {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.18);
-      cursor: pointer;
-      transition: background 0.2s;
-      border: none;
-      outline: none;
+      width: 60px; height: 60px; border-radius: 50%;
+      background: #ffffff; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.18); cursor: pointer; transition: background 0.2s;
+      border: none; outline: none;
     }
-    .main-fab img {
-      width: 34px;
-      height: 34px;
-    }
+    .main-fab img { width: 34px; height: 34px; }
     .fab-menu {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      position: absolute;
-      bottom: 110px;
-      right: 30;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.2s;
+      display: flex; flex-direction: column; gap: 12px; position: absolute;
+      bottom: 110px; right: 30px; opacity: 0; visibility: hidden; transition: opacity 0.2s;
     }
-    .fab-menu.show {
-      opacity: 1;
-      visibility: visible;
-    }
+    .fab-menu.show { opacity: 1; visibility: visible; }
     .fab-menu a {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 48px; height: 48px; border-radius: 50%; background: #fff;
+      display: flex; align-items: center; justify-content: center;
       box-shadow: 0 2px 8px rgba(0,0,0,0.10);
       transition: background 0.2s, transform 0.2s;
     }
-    .fab-menu a:hover {
-      background: #eee;
-      transform: scale(1.12);
-    }
-    .fab-menu img {
-      width: 60%;
-      height: auto;
-    }
+    .fab-menu a:hover { background: #eee; transform: scale(1.12); }
+    .fab-menu img { width: 60%; height: auto; }
     .floating-caption {
-      margin-top: 8px;
-      font-size: 15px;
-      color: #666;
-      background: rgba(255,255,255,0.85);
-      border-radius: 8px;
-      padding: 2px 12px;
+      margin-top: 8px; font-size: 15px; color: #666;
+      background: rgba(255,255,255,0.85); border-radius: 8px; padding: 2px 12px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.07);
-      font-family: 'Vazirmatn', sans-serif;
-      text-align: center;
-      direction: rtl;
-      pointer-events: none;
-      user-select: none;
+      font-family: 'Vazir', sans-serif; text-align: center; direction: rtl;
+      pointer-events: none; user-select: none;
     }
+
     @media (max-width:600px) {
       .floating-social-btn { right: 16px; bottom: 24px; }
       .main-fab { width: 52px; height: 52px; }
@@ -179,11 +120,9 @@
 
   <hr />
 
-  <!-- دکمه شناور شبکه‌های اجتماعی -->
   <div class="floating-social-btn">
     <button class="main-fab" id="fabToggle" aria-label="شبکه‌های اجتماعی">
       <img src="https://raw.githubusercontent.com/abbas-rasekh/Chipia.ir/refs/heads/main/Chipia-logo-croped.png" alt="Social Media">
-      <!-- این آدرس آیکن را می‌توانی هر وقت خواستی تغییر بدهی -->
     </button>
     <div class="fab-menu" id="fabMenu">
       <a href="https://instagram.com/chipia.ir" target="_blank" title="Instagram">
@@ -199,18 +138,15 @@
     <div class="floating-caption">چیپیا در فجازی</div>
   </div>
 
-  <footer>
-    <!-- حذف بخش شبکه‌های اجتماعی از فوتر -->
-  </footer>
+  <footer></footer>
+
   <script>
-    // اسکریپت باز و بسته شدن منوی شناور
     const fabToggle = document.getElementById('fabToggle');
     const fabMenu = document.getElementById('fabMenu');
     fabToggle.addEventListener('click', function (e) {
       fabMenu.classList.toggle('show');
       e.stopPropagation();
     });
-    // بستن منو با کلیک خارج از دکمه
     document.addEventListener('click', function (e) {
       if (!fabToggle.contains(e.target)) {
         fabMenu.classList.remove('show');
@@ -219,4 +155,4 @@
   </script>
 </body>
 
-  </html>
+      </html>
