@@ -8,11 +8,12 @@
   <meta name="theme-color" content="#000000">
   <meta name="description" content="فروشگاه آنلاین بومرنگ چیپیا، مرجع کامل خرید بومرنگ در ایران. انواع بومرنگ چوبی، پلاستیکی، حرفه‌ای و ورزشی برای مبتدی تا حرفه‌ای‌ها. با ارسال سریع به سراسر کشور.">
   
-  <!-- فاو آیکون -->
   <link rel="icon" type="image/png" href="/images/favicon.jpg">
 
+  <link rel="preload" href="/Fonts/Vazir.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/Fonts/Vazir-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
   <style>
-    /* فونت Vazir از هاست خودت */
     @font-face {
       font-family: 'Vazir';
       src: url('/Fonts/Vazir.woff2') format('woff2');
@@ -93,7 +94,6 @@
       margin: 40px 0;
     }
 
-    /* دکمه شناور شبکه‌های اجتماعی */
     .floating-social-btn {
       position: fixed;
       right: 30px;
@@ -187,27 +187,21 @@
     <span>چیپیا</span>
   </a>
 
-  <a class="button-with-icon" href="https://chipia.ir" target="_blank" rel="noopener noreferrer">
-    <img src="/images/chipia-logo.webp" alt="Chipia Icon">
-    <span>چیپیا</span>
-  </a>
-
   <hr />
 
-  <!-- دکمه شناور شبکه‌های اجتماعی -->
   <div class="floating-social-btn">
     <button class="main-fab" id="fabToggle" aria-label="شبکه‌های اجتماعی">
       <img src="/images/chipia-logo.webp" alt="Social Media">
     </button>
     <div class="fab-menu" id="fabMenu">
       <a href="https://instagram.com/chipia.ir" target="_blank" title="Instagram">
-        <img src="/images/instagram.webp" alt="Instagram">
+        <img src="/images/instagram.webp" alt="Instagram" loading="lazy">
       </a>
       <a href="https://www.tiktok.com/@chipia.ir" target="_blank" title="TikTok">
-        <img src="/images/tiktok.webp" alt="TikTok">
+        <img src="/images/tiktok.webp" alt="TikTok" loading="lazy">
       </a>
       <a href="https://youtube.com/@chipia_ir" target="_blank" title="YouTube">
-        <img src="/images/youtube.webp" alt="YouTube">
+        <img src="/images/youtube.webp" alt="YouTube" loading="lazy">
       </a>
     </div>
     <div class="floating-caption">چیپیا در فجازی</div>
@@ -216,8 +210,7 @@
   <footer>
   </footer>
 
-  <script>
-    // باز و بسته شدن منوی شناور
+  <script defer>
     const fabToggle = document.getElementById('fabToggle');
     const fabMenu = document.getElementById('fabMenu');
     fabToggle.addEventListener('click', function (e) {
