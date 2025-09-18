@@ -284,6 +284,19 @@
       margin-bottom: 14px;
       text-align: justify;
     }
+      /* این کدها فقط برای صفحاتی با عرض حداقل ۷۶۸ پیکسل (مانند دسکتاپ) اعمال می‌شوند */
+@media (min-width: 768px) {
+  .product-list {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .product-card {
+    flex: 1 1 300px;
+    max-width: 380px;
+  }
+}
   </style>
 </head>
 
