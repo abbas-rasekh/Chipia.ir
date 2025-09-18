@@ -254,7 +254,7 @@
     }
     .product-options {
       margin-top: 16px;
-      display: none;
+      display: flex;
       flex-direction: column;
       gap: 10px;
     }
@@ -562,20 +562,6 @@ details[open] .faq-question::before {
   
 </div>
   
-  <script>
-    function toggleOptions(element) {
-      // همه‌ی منوهای باز رو ببند
-      document.querySelectorAll(".product-options").forEach(opt => {
-        if (opt !== element.nextElementSibling) {
-          opt.style.display = "none";
-        }
-      });
-      // منوی همون کارت رو باز/بسته کن
-      const options = element.nextElementSibling;
-      options.style.display = (options.style.display === "flex") ? "none" : "flex";
-    }
-  </script>
-
   <div class="floating-social-btn">
     <button class="main-fab" id="fabToggle" aria-label="شبکه‌های اجتماعی">
       <img src="/images/chipia-logo.webp" alt="Social Media">
