@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="fa">
+
 <head>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Chipia",
+    "url": "https://chipia.ir/"
+  }
+  </script>
+
   <meta charset="UTF-8">
   <title>چیپیا | بومرنگ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#000000">
-  <meta name="description" content="خرید بومرنگ‌های متنوع از فروشگاه چیپیا. انواع بومرنگ چوبی و ورزشی با کیفیت عالی.">
+  <meta name="description" content="فروشگاه آنلاین بومرنگ چیپیا، مرجع کامل خرید بومرنگ در ایران. انواع بومرنگ چوبی، پلاستیکی، حرفه‌ای و ورزشی برای مبتدی تا حرفه‌ای‌ها. با ارسال سریع به سراسر کشور.">
 
   <link rel="icon" type="image/png" href="/images/favicon.jpg">
 
-  <!-- فونت‌ها -->
+  <!-- Preload فونت‌ها -->
   <link rel="preload" href="/Fonts/Vazir.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/Fonts/Vazir-Bold.woff2" as="font" type="font/woff2" crossorigin>
 
   <style>
+    /* فونت Vazir */
     @font-face {
       font-family: 'Vazir';
       src: url('/Fonts/Vazir.woff2') format('woff2');
       font-weight: 400;
       font-display: swap;
     }
+
     @font-face {
       font-family: 'Vazir';
       src: url('/Fonts/Vazir-Bold.woff2') format('woff2');
@@ -27,152 +39,209 @@
       font-display: swap;
     }
 
-    body {
-      font-family: 'Vazir', sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      line-height: 1.7;
+    html {
+      min-height: 100%;
+      background: linear-gradient(135deg, #f9f9f9, #ececec);
     }
-    h1, h2, h3 {
-      font-weight: 700;
-      margin: 0 0 12px;
-    }
-    a { color: inherit; }
 
-    /* بخش محصولات */
-    #products {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 16px;
-    }
-    #products h2 {
-      font-size: 1.6rem;
+    body {
+      background: transparent;
+      min-height: 100vh;
+      font-family: 'Vazir', Tahoma, Arial, "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
       text-align: center;
-      margin-bottom: 28px;
+      padding: 50px 20px;
+      color: #333;
+      margin: 0;
     }
-    .product-list {
+
+    h1 {
+      font-size: 2.2rem;
+      color: #111;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #666;
+      font-weight: 400;
+    }
+
+    .button-with-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      max-width: 280px;
+      width: 100%;
+      background: #fff;
+      color: #222;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-size: 15px;
+      margin: 20px auto;
+      direction: rtl;
+      text-align: right;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      box-sizing: border-box;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      font-weight: 400;
+    }
+
+    .button-with-icon:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .button-with-icon img {
+      width: 26px;
+      height: 26px;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #bbb, transparent);
+      margin: 40px 0;
+    }
+
+    .floating-social-btn {
+      position: fixed;
+      right: 30px;
+      bottom: 90px;
+      z-index: 999;
       display: flex;
       flex-direction: column;
-      gap: 20px;
-    }
-    .product-card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .product-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    }
-    .product-header {
-      cursor: pointer;
-    }
-    .product-header img {
-      max-width: 160px;
-      margin-bottom: 12px;
-    }
-    .product-header h3 {
-      font-size: 1.2rem;
-      margin: 0;
-    }
-    .product-options {
-      margin-top: 16px;
-      display: none;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .product-options a {
-      display: block;
-      padding: 10px 16px;
-      border-radius: 8px;
-      background: #222;
-      color: #fff;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    .product-options a:hover {
-      background: #444;
+      align-items: center;
     }
 
-    /* بخش سئو */
-    #seo-content {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 0 16px 60px;
-      font-size: 0.95rem;
-      color: #555;
+    .main-fab {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+      cursor: pointer;
+      transition: background 0.2s;
+      border: none;
+      outline: none;
     }
-    #seo-content h2 {
-      font-size: 1.4rem;
-      margin-bottom: 16px;
-      text-align: right;
+
+    .main-fab img {
+      width: 34px;
+      height: 34px;
     }
-    #seo-content p {
-      margin-bottom: 14px;
-      text-align: justify;
+
+    .fab-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: absolute;
+      bottom: 110px;
+      right: 30;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s;
+    }
+
+    .fab-menu.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .fab-menu a {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .fab-menu a:hover {
+      background: #eee;
+      transform: scale(1.12);
+    }
+
+    .fab-menu img {
+      width: 60%;
+      height: auto;
+    }
+
+    .floating-caption {
+      margin-top: 8px;
+      font-size: 15px;
+      color: #666;
+      background: rgba(255,255,255,0.85);
+      border-radius: 8px;
+      padding: 2px 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+      font-family: 'Vazir', sans-serif;
+      text-align: center;
+      direction: rtl;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    @media (max-width:600px) {
+      .floating-social-btn { right: 16px; bottom: 24px; }
+      .main-fab { width: 52px; height: 52px; }
+      .fab-menu a { width: 40px; height: 40px; }
+      .floating-caption { font-size: 13px; padding: 2px 8px;}
     }
   </style>
 </head>
+
 <body>
-  <h1 style="text-align:center; padding:20px 10px;">چیپیا | بومرنگ</h1>
+  <h1>Chipia | بومرنگ</h1>
+  <p>&#x1FA83; بچرخ تا بچرخیم</p>
 
-  <!-- محصولات -->
-  <section id="products">
-    <h2>محصولات چیپیا</h2>
-    <div class="product-list">
-      
-      <!-- محصول ۱ -->
-      <div class="product-card">
-        <div class="product-header" onclick="toggleOptions(this)">
-          <img src="/images/product1.webp" alt="بومرنگ چوبی" loading="lazy">
-          <h3>بومرنگ چوبی</h3>
-        </div>
-        <div class="product-options">
-          <a href="https://basalam.com/your-shop/product/wooden-boomerang" target="_blank">خرید از باسلام</a>
-          <a href="https://www.digikala.com/product/dkp-example-wooden-boomerang" target="_blank">خرید از دیجی‌کالا</a>
-        </div>
-      </div>
+  <a class="button-with-icon" href="https://chipia.ir" target="_blank" rel="noopener noreferrer">
+    <img src="/images/chipia-logo.webp" alt="Chipia Icon">
+    <span>چیپیا</span>
+  </a>
 
-      <!-- محصول ۲ -->
-      <div class="product-card">
-        <div class="product-header" onclick="toggleOptions(this)">
-          <img src="/images/product2.webp" alt="بومرنگ ورزشی" loading="lazy">
-          <h3>بومرنگ ورزشی</h3>
-        </div>
-        <div class="product-options">
-          <a href="https://basalam.com/your-shop/product/sport-boomerang" target="_blank">خرید از باسلام</a>
-          <a href="https://www.digikala.com/product/dkp-example-sport-boomerang" target="_blank">خرید از دیجی‌کالا</a>
-        </div>
-      </div>
+  <hr />
 
+  <div class="floating-social-btn">
+    <button class="main-fab" id="fabToggle" aria-label="شبکه‌های اجتماعی">
+      <img src="/images/chipia-logo.webp" alt="Social Media">
+    </button>
+    <div class="fab-menu" id="fabMenu">
+      <a href="https://instagram.com/chipia.ir" target="_blank" title="Instagram">
+        <img src="/images/instagram.webp" alt="Instagram" loading="lazy">
+      </a>
+      <a href="https://www.tiktok.com/@chipia.ir" target="_blank" title="TikTok">
+        <img src="/images/tiktok.webp" alt="TikTok" loading="lazy">
+      </a>
+      <a href="https://youtube.com/@chipia_ir" target="_blank" title="YouTube">
+        <img src="/images/youtube.webp" alt="YouTube" loading="lazy">
+      </a>
     </div>
-  </section>
+    <div class="floating-caption">چیپیا در فجازی</div>
+  </div>
 
-  <!-- محتوای سئو -->
-  <section id="seo-content">
-    <h2>همه چیز درباره بومرنگ</h2>
-    <p>بومرنگ یکی از ابزارهای قدیمی و جذاب است که در ابتدا توسط بومیان استرالیا به عنوان وسیله شکار استفاده می‌شد. امروزه بومرنگ نه تنها یک وسیله ورزشی و سرگرمی به شمار می‌آید بلکه به عنوان یک فعالیت هیجان‌انگیز در بین جوانان و ورزشکاران نیز محبوبیت بالایی پیدا کرده است.</p>
-    <p>انواع مختلفی از بومرنگ وجود دارد؛ بومرنگ‌های چوبی که سبک و مقاوم هستند برای مبتدی‌ها مناسب‌اند و بومرنگ‌های ورزشی برای حرفه‌ای‌ها طراحی شده‌اند تا پرتاب‌های دقیق‌تری داشته باشند. خرید بومرنگ اصل و باکیفیت از اهمیت بالایی برخوردار است تا تجربه‌ای متفاوت و لذت‌بخش از پرتاب و بازگشت آن داشته باشید.</p>
-    <p>اگر قصد خرید بومرنگ دارید، فروشگاه چیپیا مجموعه‌ای متنوع از بومرنگ‌ها را در اختیار شما قرار داده است تا بتوانید انتخابی متناسب با نیاز خود داشته باشید.</p>
-  </section>
+  <footer></footer>
 
-  <script>
-    function toggleOptions(element) {
-      // همه‌ی منوهای باز رو ببند
-      document.querySelectorAll(".product-options").forEach(opt => {
-        if (opt !== element.nextElementSibling) {
-          opt.style.display = "none";
-        }
-      });
-      // منوی همون کارت رو باز/بسته کن
-      const options = element.nextElementSibling;
-      options.style.display = (options.style.display === "flex") ? "none" : "flex";
-    }
+  <script defer>
+    const fabToggle = document.getElementById('fabToggle');
+    const fabMenu = document.getElementById('fabMenu');
+    fabToggle.addEventListener('click', function (e) {
+      fabMenu.classList.toggle('show');
+      e.stopPropagation();
+    });
+    document.addEventListener('click', function (e) {
+      if (!fabToggle.contains(e.target)) {
+        fabMenu.classList.remove('show');
+      }
+    });
   </script>
 </body>
-</html>
+  </html>
