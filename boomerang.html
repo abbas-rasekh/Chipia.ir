@@ -54,7 +54,7 @@
       margin: 0;
     }
 
-    h1 {
+    h1, h2, h3 {
       font-size: 2.2rem;
       color: #111;
       margin-bottom: 10px;
@@ -195,6 +195,80 @@
       .main-fab { width: 52px; height: 52px; }
       .fab-menu a { width: 40px; height: 40px; }
       .floating-caption { font-size: 13px; padding: 2px 8px;}
+     /* بخش محصولات */
+    #products {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+    #products h2 {
+      font-size: 1.6rem;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .product-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+    .product-header {
+      cursor: pointer;
+    }
+    .product-header img {
+      max-width: 160px;
+      margin-bottom: 12px;
+    }
+    .product-header h3 {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+    .product-options {
+      margin-top: 16px;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .product-options a {
+      display: block;
+      padding: 10px 16px;
+      border-radius: 8px;
+      background: #222;
+      color: #fff;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .product-options a:hover {
+      background: #444;
+    }
+
+    /* بخش سئو */
+    #seo-content {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 0 16px 60px;
+      font-size: 0.95rem;
+      color: #555;
+    }
+    #seo-content h2 {
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      text-align: right;
+    }
+    #seo-content p {
+      margin-bottom: 14px;
+      text-align: justify;
     }
   </style>
 </head>
@@ -207,6 +281,60 @@
     <img src="/images/chipia-logo.webp" alt="Chipia Icon">
     <span>چیپیا</span>
   </a>
+
+<!-- محصولات -->
+  <section id="products">
+    <h2>محصولات چیپیا</h2>
+    <div class="product-list">
+      
+      <!-- محصول ۱ -->
+      <div class="product-card">
+        <div class="product-header" onclick="toggleOptions(this)">
+          <img src="/images/product1.webp" alt="بومرنگ چوبی" loading="lazy">
+          <h3>بومرنگ چوبی</h3>
+        </div>
+        <div class="product-options">
+          <a href="https://basalam.com/your-shop/product/wooden-boomerang" target="_blank">خرید از باسلام</a>
+          <a href="https://www.digikala.com/product/dkp-example-wooden-boomerang" target="_blank">خرید از دیجی‌کالا</a>
+        </div>
+      </div>
+
+      <!-- محصول ۲ -->
+      <div class="product-card">
+        <div class="product-header" onclick="toggleOptions(this)">
+          <img src="/images/product2.webp" alt="بومرنگ ورزشی" loading="lazy">
+          <h3>بومرنگ ورزشی</h3>
+        </div>
+        <div class="product-options">
+          <a href="https://basalam.com/your-shop/product/sport-boomerang" target="_blank">خرید از باسلام</a>
+          <a href="https://www.digikala.com/product/dkp-example-sport-boomerang" target="_blank">خرید از دیجی‌کالا</a>
+        </div>
+      </div>
+
+    </div>
+</section>
+
+  <!-- محتوای سئو -->
+  <section id="seo-content">
+    <h2>همه چیز درباره بومرنگ</h2>
+    <p>بومرنگ یکی از ابزارهای قدیمی و جذاب است که در ابتدا توسط بومیان استرالیا به عنوان وسیله شکار استفاده می‌شد. امروزه بومرنگ نه تنها یک وسیله ورزشی و سرگرمی به شمار می‌آید بلکه به عنوان یک فعالیت هیجان‌انگیز در بین جوانان و ورزشکاران نیز محبوبیت بالایی پیدا کرده است.</p>
+    <p>انواع مختلفی از بومرنگ وجود دارد؛ بومرنگ‌های چوبی که سبک و مقاوم هستند برای مبتدی‌ها مناسب‌اند و بومرنگ‌های ورزشی برای حرفه‌ای‌ها طراحی شده‌اند تا پرتاب‌های دقیق‌تری داشته باشند. خرید بومرنگ اصل و باکیفیت از اهمیت بالایی برخوردار است تا تجربه‌ای متفاوت و لذت‌بخش از پرتاب و بازگشت آن داشته باشید.</p>
+    <p>اگر قصد خرید بومرنگ دارید، فروشگاه چیپیا مجموعه‌ای متنوع از بومرنگ‌ها را در اختیار شما قرار داده است تا بتوانید انتخابی متناسب با نیاز خود داشته باشید.</p>
+  </section>
+
+  <script>
+    function toggleOptions(element) {
+      // همه‌ی منوهای باز رو ببند
+      document.querySelectorAll(".product-options").forEach(opt => {
+        if (opt !== element.nextElementSibling) {
+          opt.style.display = "none";
+        }
+      });
+      // منوی همون کارت رو باز/بسته کن
+      const options = element.nextElementSibling;
+      options.style.display = (options.style.display === "flex") ? "none" : "flex";
+    }
+  </script>
 
   <hr />
 
