@@ -297,6 +297,64 @@
     max-width: 380px;
   }
 }
+    .faq-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 50px auto;
+    font-family: Arial, sans-serif;
+    direction: rtl; /* برای نمایش صحیح متن فارسی */
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.faq-item {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #555;
+    background-color: #f9f9f9;
+    list-style: none; /* حذف علامت پیش‌فرض */
+}
+
+.faq-question::before {
+    content: '+';
+    float: left;
+    font-size: 20px;
+    transition: transform 0.3s;
+}
+
+details[open] .faq-question::before {
+    content: '-';
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 15px;
+    background-color: #f4f4f4;
+    color: #666;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+      }
+      
   </style>
 </head>
 
@@ -370,7 +428,38 @@
 <p>شکل‌دهی به بال‌ها: این مهم‌ترین مرحله است. با استفاده از سنباده یا ابزار تراشکاری، بال‌های بومرنگ را به گونه‌ای گرد کنید که شبیه به بال هواپیما شوند (سطح بالایی گرد و سطح پایینی صاف). این کار برای ایجاد نیروی لیفت ضروری است. </p>
 <p>تعادل‌سنجی و پرداخت نهایی: پس از شکل‌دهی، لبه‌ها را صاف کنید و بومرنگ را رنگ یا روغن بزنید تا در برابر رطوبت مقاوم شود. پرتاب‌های آزمایشی انجام دهید و در صورت نیاز، با تغییر جزئی در شکل بال‌ها، پرواز آن را اصلاح کنید. </p> 
   </section>
+<div class="faq-container">
+    <h2>سوالات متداول</h2>
+    
+    <div class="faq-item">
+        <details>
+            <summary class="faq-question">سوال اول: نمونه سوال شماره یک؟</summary>
+            <div class="faq-answer">
+                <p>پاسخ سوال اول: این یک نمونه پاسخ برای سوال اول است. می‌توانید متن دلخواه خود را در اینجا قرار دهید.</p>
+            </div>
+        </details>
+    </div>
+    
+    <div class="faq-item">
+        <details>
+            <summary class="faq-question">سوال دوم: نمونه سوال شماره دو؟</summary>
+            <div class="faq-answer">
+                <p>پاسخ سوال دوم: این یک پاسخ دیگر است که به سوال دوم مرتبط می‌شود. برای هر سوال، یک پاسخ جداگانه در نظر بگیرید.</p>
+            </div>
+        </details>
+    </div>
+    
+    <div class="faq-item">
+        <details>
+            <summary class="faq-question">سوال سوم: نمونه سوال شماره سه؟</summary>
+            <div class="faq-answer">
+                <p>پاسخ سوال سوم: این پاسخ نهایی است. شما می‌توانید به تعداد دلخواه سوال و پاسخ به این بخش اضافه کنید.</p>
+            </div>
+        </details>
+    </div>
 
+</div>
+  
   <script>
     function toggleOptions(element) {
       // همه‌ی منوهای باز رو ببند
