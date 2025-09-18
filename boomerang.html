@@ -297,63 +297,95 @@
     max-width: 380px;
   }
 }
-    .faq-container {
+/* بخش استایل‌دهی سوالات متداول */
+.faq-container {
     width: 100%;
     max-width: 800px;
-    margin: 50px auto;
-    font-family: Vazir;
-    direction: rtl; /* برای نمایش صحیح متن فارسی */
+    margin: 40px auto; /* کمی کمتر از قبل */
+    font-family: 'vazir', tahoma, arial, "segoe ui emoji", "apple color emoji", "noto color emoji", sans-serif; /* استفاده از فونت اصلی سایت */
+    direction: rtl;
+    padding: 0 16px; /* پدینگ مشابه بخش محصولات */
 }
 
-h2 {
+.faq-container h2 {
+    font-size: 1.6rem; /* اندازه فونت مشابه h2 محصولات */
     text-align: center;
-    color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 28px; /* فاصله از پایین مشابه h2 محصولات */
+    color: #111; /* رنگ مشابه h2 محصولات */
 }
 
 .faq-item {
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 10px;
+    background: #fff; /* پس‌زمینه سفید مشابه کارت محصول */
+    border-radius: 14px; /* گرد کردن گوشه‌ها مشابه کارت محصول */
+    padding: 10px; /* پدینگ داخلی کمتر برای فضای بهتر */
+    text-align: right; /* متن به راست */
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08); /* سایه مشابه کارت محصول */
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 20px; /* فاصله بین آیتم‌های FAQ */
+}
+
+.faq-item:hover {
+    transform: translatey(-4px); /* افکت هاور مشابه کارت محصول */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12); /* سایه هاور مشابه کارت محصول */
 }
 
 .faq-question {
-    padding: 15px;
+    padding: 10px 15px; /* پدینگ برای متن سوال */
     cursor: pointer;
-    font-weight: bold;
-    color: #555;
-    background-color: #f9f9f9;
-    list-style: none; /* حذف علامت پیش‌فرض */
+    font-weight: 700; /* فونت بولدتر مشابه هدینگ‌های محصول */
+    color: #333; /* رنگ تیره برای سوال */
+    background-color: transparent; /* حذف پس‌زمینه سوال */
+    list-style: none;
+    display: flex; /* برای تنظیم آیکون در کنار متن */
+    align-items: center;
+    justify-content: space-between; /* فاصله بین متن و آیکون */
+    font-size: 1.1rem; /* اندازه فونت سوال */
 }
 
 .faq-question::before {
     content: '+';
-    float: left;
-    font-size: 20px;
-    transition: transform 0.3s;
+    font-size: 1.5rem; /* اندازه آیکون */
+    color: #888; /* رنگ آیکون */
+    transition: transform 0.3s, content 0.3s;
+    margin-left: 10px; /* فاصله از متن */
+    order: 2; /* قرار گرفتن در سمت چپ (بعد از متن در جهت RTL) */
 }
 
 details[open] .faq-question::before {
     content: '-';
-    transform: rotate(180deg);
+    transform: rotate(0deg); /* چرخش به 0 برای علامت منهای */
 }
 
 .faq-answer {
-    padding: 15px;
-    background-color: #f4f4f4;
-    color: #666;
+    padding: 5px 15px 15px 15px; /* پدینگ برای پاسخ */
+    background-color: transparent; /* حذف پس‌زمینه پاسخ */
+    color: #666; /* رنگ متن پاسخ */
+    font-weight: 400; /* فونت نرمال برای پاسخ */
+    text-align: justify; /* چینش justify برای پاسخ */
+    font-size: 0.95rem; /* اندازه فونت پاسخ */
     animation: fadeIn 0.5s ease-in-out;
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateY(-5px); /* افکت fade-in کمی ملایم‌تر */
     }
     to {
         opacity: 1;
         transform: translateY(0);
     }
-      }
+}
+
+/* برای کوچک کردن آیکون در موبایل */
+@media (max-width: 600px) {
+    .faq-question {
+        font-size: 1rem;
+    }
+    .faq-question::before {
+        font-size: 1.3rem;
+    }
+}
       
   </style>
 </head>
