@@ -569,6 +569,24 @@ details[open] .faq-question::before {
     <div class="floating-caption">چیپیا در فجازی</div>
   </div>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const detailsElements = document.querySelectorAll('.faq-item details');
+    
+      detailsElements.forEach(item => {
+        item.addEventListener('toggle', (event) => {
+          if (item.open) {
+            detailsElements.forEach(otherItem => {
+              if (otherItem !== item && otherItem.open) {
+                otherItem.open = false;
+              }
+            });
+          }
+        });
+      });
+    });
+  </script>
+  
   <footer></footer>
 
   <script defer>
