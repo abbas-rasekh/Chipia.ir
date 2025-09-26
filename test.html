@@ -279,16 +279,21 @@
         }
         
         .product-icon {
-            width: 60px;
-            height: 60px;
-            background: #e0e7ff;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ccc; /* فقط برای نمایش مرز div */
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-icon img {
+    max-width: 90%; /* کمی کوچکتر از 100% برای فاصله از لبه */
+    max-height: 90%;
+    object-fit: contain;
+}
         
         .product-card h3 {
             font-size: 1.3rem;
