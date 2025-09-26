@@ -278,21 +278,12 @@
             font-weight: bold;
         }
         
-        .product-icon {
-    width: 60px;
-    height: 60px;
-    border: 1px solid #ccc; /* فقط برای نمایش مرز div */
-    border-radius: 8px;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.product-icon img {
-    max-width: 90%; /* کمی کوچکتر از 100% برای فاصله از لبه */
-    max-height: 90%;
-    object-fit: contain;
+.product-card-image {
+    width: 100%; /* Make the image take the full width of the card */
+    max-height: 200px; /* Set a max height to keep cards consistent, adjust as needed */
+    object-fit: contain; /* or 'cover' depending on how you want images to fill the space */
+    border-radius: 8px; /* Match the card's border-radius */
+    margin-bottom: 1rem; /* Add some space below the image */
 }
         
         .product-card h3 {
@@ -581,9 +572,8 @@
          data-store-a="https://store-a-fast-performance.com"
          data-store-b="https://store-b-fast-performance.com"
          data-store-c="https://store-c-fast-performance.com">
-        <div class="product-icon">
-            <img src="/images/chipia-arrow.webp" alt="بومرنگ مدل Chipia ARROW">
-        </div>
+
+        <img src="/images/chipia-arrow.webp" alt="بومرنگ مدل Chipia ARROW" class="product-card-image">
         <h3>بومرنگ مدل Chipia ARROW</h3>
         <p>برای خرید بومرنگ چوبی و بازگشت‌پدیر Chipia ARROW کلیک کنید...</p>
     </div>
