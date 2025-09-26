@@ -713,7 +713,7 @@
             <button class="modal-close" onclick="closePurchaseModal()">×</button>
             <h3 class="modal-title" id="modalTitle">انتخاب فروشگاه</h3>
             <p class="modal-subtitle">برای خرید این محصول یکی از گزینه‌های زیر را انتخاب کنید:</p>
-            <div class="purchase-options">
+            <div class="purchase-options" id="purchaseOptionsContainer">
 
             </div>
         </div>
@@ -752,9 +752,9 @@
 
         // Purchase Modal functionality
     function openPurchaseModal(productCardElement, productName) {
-        const modal = document.getElementById('purchaseModal');
-        const modalTitle = document.getElementById('modalTitle');
-        const purchaseOptionsContainer = document.getElementById('purchaseOptionsContainer');
+    const modal = document.getElementById('purchaseModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const purchaseOptionsContainer = document.getElementById('purchaseOptionsContainer');
 
         modalTitle.textContent = `خرید ${productName}`;
         purchaseOptionsContainer.innerHTML = ''; // پاک کردن لینک‌های قبلی
