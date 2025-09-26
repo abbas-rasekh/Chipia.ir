@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وبسایت مدرن و مینیمال | سریع و بهینه شده برای سئو</title>
+    <meta name="description" content="وبسایت تمیز و مدرن با طراحی موبایل محور، بهینه شده برای سرعت و عملکرد سئو">
+    <meta name="keywords" content="طراحی مدرن، وبسایت مینیمال، موبایل محور، بهینه سازی سئو">
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+        }
+        
+        body {
+            font-family: 'Vazir', 'Tahoma', 'Arial', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #fafafa;
+            direction: rtl;
+            text-align: right;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            flex-direction: row-reverse;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-direction: row-reverse;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #2563eb;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+        
+        .product-icon {
+            width: 60px;
+            height: 60px;
+            background: #e0e7ff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .product-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .product-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* SEO Content Section */
+        .seo-content {
+            padding: 4rem 0;
+            background: #f8fafc;
+        }
+        
+        .content-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .seo-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        
+        .seo-content h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+            color: #444;
+        }
+        
+        .seo-content p {
+            margin-bottom: 1.5rem;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .content-image {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            background: linear-gradient(45deg, #e0e7ff, #c7d2fe);
+            border-radius: 12px;
+            margin: 2rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6366f1;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .content-image:hover {
+            transform: scale(1.02);
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background: #f9fafb;
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: #f3f4f6;
+        }
+        
+        .faq-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 1.5rem;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+        
+        /* Floating Action Button */
+        .fab {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+        
+        .fab-button {
+            width: 56px;
+            height: 56px;
+            background: #2563eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .fab-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 99, 235, 0.5);
+        }
+        
+        .fab-menu {
+            position: absolute;
+            bottom: 70px;
+            left: 0;
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .fab-menu.active {
+            display: flex;
+        }
+        
+        .fab-item {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .fab-item:hover {
+            transform: scale(1.1);
+        }
+        
+        .fab-instagram {
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+        }
+        
+        .fab-tiktok {
+            background: #000;
+        }
+        
+        .fab-youtube {
+            background: #ff0000;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 3rem 0;
+            }
+            
+            .products, .seo-content, .faq {
+                padding: 3rem 0;
+            }
+            
+            .product-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">سایت مدرن</div>
+            <ul class="nav-links">
+                <li><a href="#home">خانه</a></li>
+                <li><a href="#products">محصولات</a></li>
+                <li><a href="#content">محتوا</a></li>
+                <li><a href="#faq">سوالات متداول</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>طراحی مدرن و مینیمال</h1>
+            <p>وبسایت سریع، تمیز و بهینه شده برای سئو با رویکرد موبایل محور</p>
+            <a href="#products" class="cta-button">مشاهده محصولات</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">محصولات ما</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-icon">🚀</div>
+                    <h3>عملکرد سریع</h3>
+                    <p>سرعت بارگذاری فوق‌العاده سریع با کد بهینه شده و منابع حداقلی برای بهترین تجربه کاربری در تمام دستگاه‌ها.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">📱</div>
+                    <h3>موبایل محور</h3>
+                    <p>طراحی شده در درجه اول برای دستگاه‌های موبایل، تضمین عملکرد کامل و ظاهر زیبا در گوشی‌ها و تبلت‌ها.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">🎨</div>
+                    <h3>طراحی تمیز</h3>
+                    <p>زیبایی‌شناسی مینیمال و مدرن با تایپوگرافی، فاصله‌گذاری و پالت رنگی دقیقاً انتخاب شده برای حداکثر تأثیر بصری.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">🔍</div>
+                    <h3>بهینه شده برای سئو</h3>
+                    <p>ساخته شده با در نظر گیری بهینه‌سازی موتورهای جستجو، شامل متاتگ‌های مناسب، HTML معنایی و محتوای ساختاریافته.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <section class="seo-content" id="content">
+        <div class="container">
+            <div class="content-wrapper">
+                <h2>آینده طراحی وب: رویکرد موبایل محور</h2>
+                <p>در چشم‌انداز دیجیتال امروز، طراحی موبایل محور نه تنها یک روند، بلکه یک ضرورت محسوب می‌شود. با بیش از ۶۰ درصد ترافیک وب که از دستگاه‌های موبایل می‌آید، ایجاد وبسایت‌هایی که تجربه موبایل را در اولویت قرار می‌دهند برای موفقیت حیاتی است. این رویکرد تضمین می‌کند که وبسایت شما بر روی دستگاه‌هایی که کاربران واقعاً استفاده می‌کنند، عملکرد بهینه‌ای داشته باشد.</p>
+                
+                <div class="content-image">
+                    <span>📊 آمار استفاده از موبایل</span>
+                </div>
+                
+                <h3>چرا طراحی موبایل محور مهم است</h3>
+                <p>طراحی موبایل محور یک رویکرد استراتژیک است که با طراحی برای کوچک‌ترین صفحه شروع می‌شود و به تدریج تجربه را برای صفحه‌های بزرگ‌تر بهبود می‌بخشد. این روش‌شناسی تضمین می‌کند که عملکرد اصلی و محتوا برای همه کاربران، صرف نظر از دستگاه آن‌ها، قابل دسترس باشد. همچنین با نمایه‌سازی موبایل محور گوگل هماهنگ است، که به این معنی است محتوای سایت موبایل شما چیزی است که گوگل در درجه اول برای رتبه‌بندی و نمایه‌سازی استفاده می‌کند.</p>
+                
+                <p>مزایا فراتر از بهینه‌سازی موتور جستجو است. طراحی موبایل محور معمولاً منجر به زمان بارگذاری سریع‌تر، رابط‌های تمیزتر و تعامل بهتر کاربر می‌شود. وقتی ابتدا برای محدودیت‌های موبایل طراحی می‌کنید، مجبور می‌شوید مهم‌ترین محتوا و ویژگی‌ها را در اولویت قرار دهید که منجر به تجربه کاربری متمرکزتر و مؤثرتر می‌شود.</p>
+                
+                <h3>استراتژی‌های بهینه‌سازی عملکرد</h3>
+                <p>سرعت بارگذاری سریع برای حفظ کاربر و رتبه‌بندی موتورهای جستجو ضروری است. مطالعات نشان می‌دهد که یک ثانیه تأخیر در زمان بارگذاری صفحه می‌تواند منجر به کاهش ۷ درصدی تبدیل‌ها شود. رویکرد ما بر کد سبک، تصاویر بهینه شده و درخواست‌های HTTP حداقلی متمرکز است تا اطمینان حاصل کند وبسایت شما با هر سرعت اتصالی به سرعت بارگذاری می‌شود.</p>
+                
+                <div class="content-image">
+                    <span>⚡ معیارهای عملکرد</span>
+                </div>
+                
+                <p>ما تکنیک‌های پیشرفته‌ای مانند بارگذاری تنبل برای تصاویر، تقسیم کد برای جاوا اسکریپت و تحویل کارآمد CSS را پیاده‌سازی می‌کنیم تا عملکرد را به حداکثر برسانیم. این بهینه‌سازی‌ها با هم کار می‌کنند تا تجربه کاربری یکپارچه‌ای ایجاد کنند که بازدیدکنندگان را درگیر نگه می‌دارد و آن‌ها را تشویق می‌کند تا محتوای شما را بیشتر کاوش کنند.</p>
+                
+                <h3>ادغام بهترین شیوه‌های سئو</h3>
+                <p>بهینه‌سازی موتور جستجو در هر جنبه از فرآیند طراحی ما تعبیه شده است. از ساختار HTML معنایی تا توضیحات متا بهینه شده، ما اطمینان می‌دهیم که وبسایت شما به طور مؤثر با موتورهای جستجو ارتباط برقرار می‌کند. این شامل سلسله مراتب مناسب عنوان، متن جایگزین برای تصاویر و نشانه‌گذاری داده ساختاریافته است که به موتورهای جستجو کمک می‌کند محتوای شما را بهتر درک کنند.</p>
+                
+                <p>ترکیب سرعت بارگذاری سریع، طراحی موبایل دوست و محتوای با کیفیت، پایه‌ای قدرتمند برای موفقیت موتور جستجو ایجاد می‌کند. این عوامل با هم کار می‌کنند تا دید وبسایت شما را بهبود بخشند و ترافیک ارگانیک را به کسب‌وکار شما هدایت کنند.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">سوالات متداول</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>چه چیزی این طراحی را موبایل محور می‌کند؟</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>رویکرد موبایل محور ما به این معنی است که ابتدا برای دستگاه‌های موبایل طراحی و توسعه می‌دهیم، سپس به تدریج برای صفحه‌های بزرگ‌تر بهبود می‌بخشیم. این عملکرد بهینه و تجربه کاربری را در گوشی‌ها و تبلت‌ها تضمین می‌کند.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>وبسایت چقدر سریع بارگذاری می‌شود؟</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>کد بهینه شده و طراحی سبک ما معمولاً زمان بارگذاری کمتر از ۲ ثانیه در اتصالات استاندارد را به دست می‌آورد، با عملکرد حتی سریع‌تر در دستگاه‌های مدرن و اینترنت پرسرعت.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>آیا طراحی برای سئو بهینه شده است؟</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>بله، وبسایت شامل متاتگ‌های مناسب، ساختار HTML معنایی، عناوین بهینه شده است و از بهترین شیوه‌های گوگل برای بهینه‌سازی موتور جستجو و نمایه‌سازی موبایل محور پیروی می‌کند.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>آیا می‌توانم طراحی را سفارشی کنم؟</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>قطعاً! طراحی تمیز و ماژولار سفارشی‌سازی رنگ‌ها، فونت‌ها، چیدمان‌ها و محتوا را آسان می‌کند در حالی که مزایای عملکرد و موبایل محور را حفظ می‌کند.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>چه مرورگرهایی پشتیبانی می‌شوند؟</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>وبسایت به طور کامل در تمام مرورگرهای مدرن از جمله کروم، فایرفاکس، سافاری و اج کار می‌کند، با تنزل مناسب برای نسخه‌های قدیمی‌تر مرورگر.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; ۱۴۰۳ سایت مدرن. ساخته شده با اصول طراحی موبایل محور.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div class="fab">
+        <button class="fab-button" onclick="toggleFabMenu()">
+            <span>📱</span>
+        </button>
+        <div class="fab-menu" id="fabMenu">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="fab-item fab-instagram">📷</a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="fab-item fab-tiktok">🎵</a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="fab-item fab-youtube">📺</a>
+        </div>
+    </div>
+
+    <script>
+        // FAQ Accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Floating Action Button functionality
+        function toggleFabMenu() {
+            const fabMenu = document.getElementById('fabMenu');
+            fabMenu.classList.toggle('active');
+        }
+
+        // Close FAB menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const fab = document.querySelector('.fab');
+            const fabMenu = document.getElementById('fabMenu');
+            
+            if (!fab.contains(e.target)) {
+                fabMenu.classList.remove('active');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98521ea057e6b921',t:'MTc1ODg4Mjk4MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
