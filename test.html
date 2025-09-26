@@ -570,6 +570,7 @@
     <div class="product-card" 
          onclick="openPurchaseModal(this, 'بومرنگ مدل Chipia ARROW')"
          data-store-a="https://store-a-fast-performance.com"
+         data-store-a="https://store-a-fast-performance.com"
          data-store-b="https://store-b-fast-performance.com"
          data-store-c="https://store-c-fast-performance.com">
 
@@ -709,7 +710,7 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closePurchaseModal()">×</button>
             <h3 class="modal-title" id="modalTitle">انتخاب فروشگاه</h3>
-            <p class="modal-subtitle">برای خرید این محصول یکی از گزینه‌های زیر را انتخاب کنید:</p>
+            <p class="modal-subtitle">برای خرید یا مشاهده اطلاعات این محصول یکی از گزینه‌های زیر را انتخاب کنید:</p>
             <div class="purchase-options" id="purchaseOptionsContainer">
 
             </div>
@@ -760,7 +761,8 @@
         const storeLinks = [
             { name: 'فروشگاه الف', icon: '🛒', url: productCardElement.dataset.storeA },
             { name: 'فروشگاه ب', icon: '🏪', url: productCardElement.dataset.storeB },
-            { name: 'فروشگاه ج', icon: '🛍️', url: productCardElement.dataset.storeC }
+            { name: 'فروشگاه ج', icon: '🛍️', url: productCardElement.dataset.storeC },
+            { name: 'فروشگاه د', icon: '🛍️', url: productCardElement.dataset.stored }
         ];
 
         storeLinks.forEach(store => {
