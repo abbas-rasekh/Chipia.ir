@@ -589,6 +589,99 @@
             .product-card {
                 padding: 1.5rem;
             }
+
+.floating-social-btn {
+    position: fixed;
+    right: 30px;
+    bottom: 90px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-fab {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+    cursor: pointer;
+    transition: background 0.2s;
+    border: none;
+    outline: none;
+}
+
+.main-fab img {
+    width: 34px;
+    height: 34px;
+}
+
+.fab-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: absolute;
+    bottom: 110px; /* Adjust this value if the main FAB size changes */
+    right: 30; /* Should be 0 if you want it aligned with the main FAB's right edge */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s;
+}
+
+.fab-menu.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.fab-menu a {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.fab-menu a:hover {
+    background: #eee;
+    transform: scale(1.12);
+}
+
+.fab-menu img {
+    width: 60%;
+    height: auto;
+}
+
+.floating-caption {
+    margin-top: 8px;
+    font-size: 15px;
+    color: #666;
+    background: rgba(255,255,255,0.85);
+    border-radius: 8px;
+    padding: 2px 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+    font-family: 'Vazir', sans-serif; /* Ensure Vazir font is available or replace */
+    text-align: center;
+    direction: rtl; /* Important for right-to-left text */
+    pointer-events: none; /* Allows clicks to pass through to elements beneath */
+    user-select: none;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width:600px) {
+    .floating-social-btn { right: 16px; bottom: 24px; }
+    .main-fab { width: 52px; height: 52px; }
+    .fab-menu a { width: 40px; height: 40px; }
+    .floating-caption { font-size: 13px; padding: 2px 8px;}
+}
+             
              footer {
     justify-content: center; /* وسط افقی */
     align-items: center;     /* وسط عمودی */
@@ -978,5 +1071,43 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'985236fd71109f7e',t:'MTc1ODg4Mzk3OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'985236fd71109f7e',t:'MTc1ODg4Mzk3OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+
+     <div class="floating-social-btn">
+    <button class="main-fab" id="fabToggle" aria-label="شبکه‌های اجتماعی">
+        <img src="/images/chipia-logo.webp" alt="Social Media">
+    </button>
+    <div class="fab-menu" id="fabMenu">
+        <a href="https://instagram.com/chipia.ir" target="_blank" title="Instagram">
+            <img src="/images/instagram.webp" alt="Instagram" loading="lazy">
+        </a>
+        <a href="https://www.tiktok.com/@chipia.ir" target="_blank" title="TikTok">
+            <img src="/images/tiktok.webp" alt="TikTok" loading="lazy">
+        </a>
+        <a href="https://youtube.com/@chipia_ir" target="_blank" title="YouTube">
+            <img src="/images/youtube.webp" alt="YouTube" loading="lazy">
+        </a>
+    </div>
+    <div class="floating-caption">چیپیا در فجازی</div>
+</div>
+
+
+<script defer>
+    const fabToggle = document.getElementById('fabToggle');
+    const fabMenu = document.getElementById('fabMenu');
+
+    fabToggle.addEventListener('click', function (e) {
+      fabMenu.classList.toggle('show');
+      e.stopPropagation(); // Prevents the click from bubbling up to the document
+    });
+
+    document.addEventListener('click', function (e) {
+      // If the click is outside the main FAB and the menu, hide the menu
+      if (!fabToggle.contains(e.target) && !fabMenu.contains(e.target)) {
+        fabMenu.classList.remove('show');
+      }
+    });
+</script>
+                 
+     </body>
 </html>
