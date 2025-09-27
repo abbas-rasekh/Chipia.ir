@@ -1123,22 +1123,19 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Floating Action Button functionality (بدون تغییر)
-function toggleFabMenu() {
+<script defer>
+    const fabToggle = document.getElementById('fabToggle');
     const fabMenu = document.getElementById('fabMenu');
-    fabMenu.classList.toggle('active');
-}
-
-// Close FAB menu when clicking outside (بدون تغییر)
-document.addEventListener('click', (e) => {
-    const fab = document.querySelector('.fab');
-    const fabMenu = document.getElementById('fabMenu');
-    
-    if (!fab.contains(e.target)) {
-        fabMenu.classList.remove('active');
-    }
-});
-
+    fabToggle.addEventListener('click', function (e) {
+      fabMenu.classList.toggle('show');
+      e.stopPropagation();
+    });
+    document.addEventListener('click', function (e) {
+      if (!fabToggle.contains(e.target)) {
+        fabMenu.classList.remove('show');
+      }
+    });
+  </script>
 // Smooth scrolling for navigation links (بدون تغییر)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
