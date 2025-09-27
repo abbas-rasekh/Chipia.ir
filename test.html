@@ -161,7 +161,11 @@
             gap: 2rem;
             margin-top: 2rem;
         }
-        
+
+        .products-grid:has(.product-card:only-child) {
+    justify-content: center; /* کارت وسط بیفته */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+}
         .product-card {
             background: white;
             border-radius: 12px;
