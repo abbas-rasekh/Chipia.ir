@@ -515,77 +515,7 @@
         .faq-item.active .faq-toggle {
             transform: rotate(45deg);
         }
-        
-        /* Floating Action Button */
-        .fab {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            z-index: 1000;
-        }
-        
-        .fab-button {
-            width: 56px;
-            height: 56px;
-            background: #2563eb;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-        }
-        
-        .fab-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 25px rgba(37, 99, 235, 0.5);
-        }
-        
-        .fab-menu {
-            position: absolute;
-            bottom: 70px;
-            left: 0;
-            display: none;
-            flex-direction: column;
-            gap: 10px;
-        }
-        
-        .fab-menu.active {
-            display: flex;
-        }
-        
-        .fab-item {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: white;
-            transition: transform 0.3s ease;
-        }
-        
-        .fab-item:hover {
-            transform: scale(1.1);
-        }
-        
-        .fab-instagram {
-            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-        }
-        
-        .fab-tiktok {
-            background: #000;
-        }
-        
-        .fab-youtube {
-            background: #ff0000;
-        }
-        
+                
         /* Footer */
         footer {
     background: #e0c79a;
@@ -914,17 +844,7 @@
     </div>
 
 
-    <!-- Floating Action Button -->
-    <div class="fab">
-        <button class="fab-button" onclick="toggleFabMenu()">
-            <span>📱</span>
-        </button>
-        <div class="fab-menu" id="fabMenu">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="fab-item fab-instagram">📷</a>
-            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="fab-item fab-tiktok">🎵</a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="fab-item fab-youtube">📺</a>
-        </div>
-    </div>
+
 
     <script>
         // FAQ Accordion functionality
@@ -1027,21 +947,6 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Floating Action Button functionality (بدون تغییر)
-function toggleFabMenu() {
-    const fabMenu = document.getElementById('fabMenu');
-    fabMenu.classList.toggle('active');
-}
-
-// Close FAB menu when clicking outside (بدون تغییر)
-document.addEventListener('click', (e) => {
-    const fab = document.querySelector('.fab');
-    const fabMenu = document.getElementById('fabMenu');
-    
-    if (!fab.contains(e.target)) {
-        fabMenu.classList.remove('active');
-    }
-});
 
 // Smooth scrolling for navigation links (بدون تغییر)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
