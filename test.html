@@ -449,17 +449,14 @@
         }
         
         .content-image {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 12px;
-    margin: 2rem auto;
-    transition: transform 0.3s ease;
+    width: 100%;           /* تصویر تمام عرض ظرف خود را می‌گیرد */
+    max-width: 600px;      /* حداکثر عرض تصویر */
+    height: auto;          /* ارتفاع خودکار مطابق با نسبت تصویر */
+    border-radius: 12px;   /* گوشه‌های گرد */
+    display: block;        /* برای حذف فاصله اضافی زیر تصویر */
+    margin: 2rem auto;     /* مرکز کردن تصویر و فاصله از بالا و پایین */
+    transition: transform 0.3s ease; /* برای افکت‌های hover یا transform */
 }
-
         
         .content-image:hover {
             transform: scale(1.02);
