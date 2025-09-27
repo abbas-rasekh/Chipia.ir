@@ -234,18 +234,6 @@
     font-family: 'Vazir', 'Tahoma', 'Arial', sans-serif; /* اطمینان از فونت */
 }
 
-         @media (min-width: 769px) { /* برای دسکتاپ و نمایش‌های بزرگتر */
-    .product-actions {
-        display: flex;
-        justify-content: center; /* برای وسط چین کردن دکمه‌ها در حالت افقی */
-        gap: 1rem; /* فاصله بین دکمه‌ها */
-    }
-
-    .product-action-button {
-        flex-grow: 1; /* باعث می‌شود دکمه‌ها فضای موجود را به طور مساوی پر کنند */
-        max-width: 180px; /* یک حداکثر عرض اختیاری برای جلوگیری از خیلی کشیده شدن دکمه‌ها */
-    }
-}
 .button-buy {
     background: #c79f63;
     color: black;
@@ -692,6 +680,19 @@
     .main-fab { width: 52px; height: 52px; }
     .fab-menu a { width: 40px; height: 40px; }
     .floating-caption { font-size: 13px; padding: 2px 8px;}
+}
+
+         @media (min-width: 769px) { /* برای دسکتاپ و نمایش‌های بزرگتر */
+    .product-actions {
+        display: flex;
+        justify-content: center; /* برای وسط چین کردن دکمه‌ها در حالت افقی */
+        gap: 1rem; /* فاصله بین دکمه‌ها */
+    }
+
+    .product-action-button {
+        flex-grow: 1; /* باعث می‌شود دکمه‌ها فضای موجود را به طور مساوی پر کنند */
+        max-width: 180px; /* یک حداکثر عرض اختیاری برای جلوگیری از خیلی کشیده شدن دکمه‌ها */
+    }
 }
              
              footer {
