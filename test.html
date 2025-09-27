@@ -164,6 +164,77 @@
             transform: translateY(-5px);
             box-shadow: 0 8px 30px rgba(0,0,0,0.12);
         }
+
+/* استایل برای دکمه‌های داخل کارت محصول */
+.product-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center; /* برای وسط چین کردن دکمه‌ها */
+}
+
+.product-action-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-family: 'Vazir', 'Tahoma', 'Arial', sans-serif; /* اطمینان از فونت */
+}
+
+.button-buy {
+    background: #2563eb;
+    color: white;
+}
+
+.button-buy:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.button-description {
+    background: #e2e8f0;
+    color: #333;
+    border: 1px solid #cbd5e1;
+}
+
+.button-description:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* استایل برای مودال معرفی محصول (مشابه purchase-modal) */
+.description-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; /* به صورت پیش‌فرض مخفی */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.description-modal.active {
+    display: flex;
+}
+
+.description-modal .modal-content {
+    /* استایل‌های modal-content قبلی را استفاده می‌کند */
+    max-width: 600px; /* ممکن است بخواهید عریض‌تر باشد */
+    text-align: right; /* برای متن فارسی */
+}
+
+.description-modal .modal-text {
+    text-align: justify;
+    line-height: 1.8;
+    color: #555;
+}
         
         /* Purchase Options Modal */
         .purchase-modal {
@@ -504,6 +575,15 @@
                 padding: 0 15px;
             }
         }
+    .product-actions {
+        flex-direction: column; /* دکمه‌ها زیر هم قرار بگیرند */
+        gap: 0.75rem;
+    }
+    .product-action-button {
+        width: 100%;
+        text-align: center;
+    }
+}
         
         @media (max-width: 480px) {
             .hero {
@@ -567,46 +647,87 @@
         <div class="container">
          <!--   <h2 class="section-title">خرید انواع مدل بومرنگ چوبی</h2> -->
             <div class="products-grid">
-    <div class="product-card" 
-         onclick="openPurchaseModal(this, 'بومرنگ مدل Chipia ARROW')"
-         data-store-a="https://store-a-fast-performance.com"
-         data-store-a="https://store-a-fast-performance.com"
-         data-store-b="https://store-b-fast-performance.com"
-         data-store-c="https://store-c-fast-performance.com">
-
+    <div class="product-card"> 
+         <!-- `onclick` را از خود کارت حذف می‌کنیم و به دکمه‌ها منتقل می‌کنیم -->
         <img src="/images/chipia-arrow.webp" alt="بومرنگ مدل Chipia ARROW" class="product-card-image">
         <h3>بومرنگ مدل Chipia ARROW</h3>
-        <p>برای خرید بومرنگ چوبی و بازگشت‌پدیر Chipia ARROW کلیک کنید...</p>
+        <p>بومرنگ چوبی و بازگشت‌پذیر Chipia ARROW تجربه‌ای نو در پرتاب و بازگشت بومرنگ را برای شما به ارمغان می‌آورد. طراحی ارگونومیک و وزن بهینه آن پرتابی آسان و دقیق را ممکن می‌سازد. با این بومرنگ می‌توانید مهارت خود را در پرتاب افزایش داده و از لحظات مفرح در فضای باز لذت ببرید.</p>
+        
+        <div class="product-actions">
+            <button class="product-action-button button-buy" 
+                    onclick="openPurchaseModal(this.closest('.product-card'), 'بومرنگ مدل Chipia ARROW')"
+                    data-store-a="https://store-a-fast-performance.com"
+                    data-store-b="https://store-b-fast-performance.com"
+                    data-store-c="https://store-c-fast-performance.com">
+                خرید
+            </button>
+            <button class="product-action-button button-description" 
+                    onclick="openProductDescriptionModal('بومرنگ مدل Chipia ARROW', 'بومرنگ چوبی و بازگشت‌پذیر Chipia ARROW تجربه‌ای نو در پرتاب و بازگشت بومرنگ را برای شما به ارمغان می‌آورد. طراحی ارگونومیک و وزن بهینه آن پرتابی آسان و دقیق را ممکن می‌سازد. با این بومرنگ می‌توانید مهارت خود را در پرتاب افزایش داده و از لحظات مفرح در فضای باز لذت ببرید. این بومرنگ برای تمامی سطوح مهارتی مناسب بوده و از مواد اولیه با کیفیت و سازگار با محیط زیست ساخته شده است. ایده‌آل برای بازی در پارک، ساحل یا هر فضای باز بزرگ.')">
+                معرفی محصول
+            </button>
+        </div>
     </div>
-    <div class="product-card" 
-         onclick="openPurchaseModal(this, 'موبایل محور')"
-         data-store-a="https://store-a-mobile-first.com"
-         data-store-b="https://store-b-mobile-first.com"> <!-- فرض کنید فروشگاه C برای این محصول لینک ندارد -->
+    <div class="product-card"> 
+         <!-- `onclick` را از خود کارت حذف می‌کنیم و به دکمه‌ها منتقل می‌کنیم -->
         <div class="product-icon">📱</div>
         <h3>موبایل محور</h3>
         <p>طراحی شده در درجه اول برای دستگاه‌های موبایل، تضمین عملکرد کامل و ظاهر زیبا در گوشی‌ها و تبلت‌ها.</p>
+        
+        <div class="product-actions">
+            <button class="product-action-button button-buy" 
+                    onclick="openPurchaseModal(this.closest('.product-card'), 'وبسایت موبایل محور')"
+                    data-store-a="https://store-a-mobile-first.com"
+                    data-store-b="https://store-b-mobile-first.com">
+                خرید
+            </button>
+            <button class="product-action-button button-description" 
+                    onclick="openProductDescriptionModal('موبایل محور', 'وبسایت‌های موبایل محور به گونه‌ای طراحی شده‌اند که ابتدا بهترین تجربه را روی گوشی‌های هوشمند و تبلت‌ها ارائه دهند. این رویکرد، سرعت بارگذاری بالا، رابط کاربری بهینه و دسترسی آسان به محتوا را در دستگاه‌های کوچک تضمین می‌کند. با توجه به افزایش استفاده از موبایل برای دسترسی به اینترنت، داشتن یک وبسایت موبایل محور امری حیاتی برای هر کسب‌وکاری است.')">
+                معرفی محصول
+            </button>
+        </div>
     </div>
-    <div class="product-card" 
-         onclick="openPurchaseModal(this, 'طراحی تمیز')"
-         data-store-a="https://store-a-clean-design.com"
-         data-store-b="https://store-b-clean-design.com"
-         data-store-c="https://store-c-clean-design.com">
+    <div class="product-card"> 
+         <!-- `onclick` را از خود کارت حذف می‌کنیم و به دکمه‌ها منتقل می‌کنیم -->
         <div class="product-icon">🎨</div>
         <h3>طراحی تمیز</h3>
         <p>زیبایی‌شناسی مینیمال و مدرن با تایپوگرافی، فاصله‌گذاری و پالت رنگی دقیقاً انتخاب شده برای حداکثر تأثیر بصری.</p>
+        
+        <div class="product-actions">
+            <button class="product-action-button button-buy" 
+                    onclick="openPurchaseModal(this.closest('.product-card'), 'طراحی تمیز')"
+                    data-store-a="https://store-a-clean-design.com"
+                    data-store-b="https://store-b-clean-design.com"
+                    data-store-c="https://store-c-clean-design.com">
+                خرید
+            </button>
+            <button class="product-action-button button-description" 
+                    onclick="openProductDescriptionModal('طراحی تمیز', 'طراحی تمیز به معنای استفاده از فضای سفید زیاد، فونت‌های خوانا و پالت رنگی محدود است که به کاربر اجازه می‌دهد بر روی محتوای اصلی تمرکز کند. این نوع طراحی حس سادگی، حرفه‌ای بودن و آرامش را منتقل می‌کند و به بهبود تجربه کاربری و خوانایی کمک شایانی می‌کند.')">
+                معرفی محصول
+            </button>
+        </div>
     </div>
-    <div class="product-card" 
-         onclick="openPurchaseModal(this, 'بهینه شده برای سئو')"
-         data-store-a="https://store-a-seo-optimized.com"
-         data-store-b="https://store-b-seo-optimized.com">
+    <div class="product-card"> 
+         <!-- `onclick` را از خود کارت حذف می‌کنیم و به دکمه‌ها منتقل می‌کنیم -->
         <div class="product-icon">🔍</div>
         <h3>بهینه شده برای سئو</h3>
         <p>ساخته شده با در نظر گیری بهینه‌سازی موتورهای جستجو، شامل متاتگ‌های مناسب، HTML معنایی و محتوای ساختاریافته.</p>
+        
+        <div class="product-actions">
+            <button class="product-action-button button-buy" 
+                    onclick="openPurchaseModal(this.closest('.product-card'), 'وبسایت بهینه شده برای سئو')"
+                    data-store-a="https://store-a-seo-optimized.com"
+                    data-store-b="https://store-b-seo-optimized.com">
+                خرید
+            </button>
+            <button class="product-action-button button-description" 
+                    onclick="openProductDescriptionModal('بهینه شده برای سئو', 'وبسایت‌های بهینه شده برای سئو (SEO) با استفاده از تکنیک‌هایی مانند کلمات کلیدی مناسب، محتوای با کیفیت، ساختار لینک داخلی قوی و سرعت بارگذاری بالا، شانس دیده شدن بیشتری در نتایج موتورهای جستجو دارند. این بهینه‌سازی به جذب ترافیک ارگانیک بیشتر و در نهایت افزایش فروش یا تعامل کمک می‌کند.')">
+                معرفی محصول
+            </button>
+        </div>
     </div>
 </div>
         </div>
     </section>
-
     <!-- SEO Content Section -->
     <section class="seo-content" id="content">
         <div class="container">
@@ -705,17 +826,27 @@
         </div>
     </footer>
 
-    <!-- Purchase Modal -->
+       <!-- Purchase Modal -->
     <div class="purchase-modal" id="purchaseModal">
         <div class="modal-content">
             <button class="modal-close" onclick="closePurchaseModal()">×</button>
             <h3 class="modal-title" id="modalTitle">انتخاب فروشگاه</h3>
             <p class="modal-subtitle">برای خرید یا مشاهده اطلاعات این محصول یکی از گزینه‌های زیر را انتخاب کنید:</p>
             <div class="purchase-options" id="purchaseOptionsContainer">
-
+                <!-- لینک‌های خرید اینجا قرار می‌گیرند -->
             </div>
         </div>
     </div>
+
+    <!-- NEW: Product Description Modal -->
+    <div class="description-modal" id="descriptionModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeProductDescriptionModal()">×</button>
+            <h3 class="modal-title" id="descriptionModalTitle"></h3>
+            <p class="modal-text" id="descriptionModalText"></p>
+        </div>
+    </div>
+
 
     <!-- Floating Action Button -->
     <div class="fab">
@@ -748,92 +879,118 @@
             });
         });
 
-        // Purchase Modal functionality
-    function openPurchaseModal(productCardElement, productName) {
+// Purchase Modal functionality (تغییر یافته)
+function openPurchaseModal(productCardElement, productName) {
     const modal = document.getElementById('purchaseModal');
     const modalTitle = document.getElementById('modalTitle');
     const purchaseOptionsContainer = document.getElementById('purchaseOptionsContainer');
 
-        modalTitle.textContent = `خرید ${productName}`;
-        purchaseOptionsContainer.innerHTML = ''; // پاک کردن لینک‌های قبلی
+    modalTitle.textContent = `خرید ${productName}`;
+    purchaseOptionsContainer.innerHTML = ''; // پاک کردن لینک‌های قبلی
 
-        // جمع‌آوری لینک‌های خرید از ویژگی‌های data-*
-        const storeLinks = [
-            { name: 'فروشگاه الف', icon: '🛒', url: productCardElement.dataset.storeA },
-            { name: 'فروشگاه ب', icon: '🏪', url: productCardElement.dataset.storeB },
-            { name: 'فروشگاه ج', icon: '🛍️', url: productCardElement.dataset.storeC },
-            { name: 'فروشگاه د', icon: '🛍️', url: productCardElement.dataset.stored }
-        ];
+    // جمع‌آوری لینک‌های خرید از ویژگی‌های data-*
+    const storeLinks = [
+        { name: 'فروشگاه الف', icon: '🛒', url: productCardElement.dataset.storeA },
+        { name: 'فروشگاه ب', icon: '🏪', url: productCardElement.dataset.storeB },
+        { name: 'فروشگاه ج', icon: '🛍️', url: productCardElement.dataset.storeC },
+        { name: 'فروشگاه د', icon: '📦', url: productCardElement.dataset.storeD } // فرض کنید storeD هم داریم
+    ];
 
-        storeLinks.forEach(store => {
-            if (store.url) { // فقط در صورتی که URL موجود باشد، لینک را اضافه کن
-                const link = document.createElement('a');
-                link.href = store.url;
-                link.target = '_blank';
-                link.rel = 'noopener noreferrer';
-                link.classList.add('purchase-option');
-                link.innerHTML = `
-                    <span class="option-icon">${store.icon}</span>
-                    <span class="option-text">خرید از ${store.name}</span>
-                    <span class="option-arrow">←</span>
-                `;
-                purchaseOptionsContainer.appendChild(link);
-            }
-        });
-
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
-    }
-
-    function closePurchaseModal() {
-        const modal = document.getElementById('purchaseModal');
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto'; // Restore scrolling
-    }
-
-    // Close modal when clicking outside (بدون تغییر)
-    document.getElementById('purchaseModal').addEventListener('click', (e) => {
-        if (e.target.classList.contains('purchase-modal')) {
-            closePurchaseModal();
+    storeLinks.forEach(store => {
+        if (store.url) { // فقط در صورتی که URL موجود باشد، لینک را اضافه کن
+            const link = document.createElement('a');
+            link.href = store.url;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.classList.add('purchase-option');
+            link.innerHTML = `
+                <span class="option-icon">${store.icon}</span>
+                <span class="option-text">خرید از ${store.name}</span>
+                <span class="option-arrow">←</span>
+            `;
+            purchaseOptionsContainer.appendChild(link);
         }
     });
 
-    // Close modal with Escape key (بدون تغییر)
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closePurchaseModal();
-        }
-    });
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
 
-    // Floating Action Button functionality (بدون تغییر)
-    function toggleFabMenu() {
-        const fabMenu = document.getElementById('fabMenu');
-        fabMenu.classList.toggle('active');
+function closePurchaseModal() {
+    const modal = document.getElementById('purchaseModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Restore scrolling
+}
+
+// NEW: Product Description Modal functionality
+function openProductDescriptionModal(productName, descriptionText) {
+    const modal = document.getElementById('descriptionModal');
+    const modalTitle = document.getElementById('descriptionModalTitle');
+    const modalText = document.getElementById('descriptionModalText');
+
+    modalTitle.textContent = productName;
+    modalText.textContent = descriptionText;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeProductDescriptionModal() {
+    const modal = document.getElementById('descriptionModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Restore scrolling
+}
+
+// Close modals when clicking outside
+document.getElementById('purchaseModal').addEventListener('click', (e) => {
+    if (e.target.classList.contains('purchase-modal')) {
+        closePurchaseModal();
     }
+});
 
-    // Close FAB menu when clicking outside (بدون تغییر)
-    document.addEventListener('click', (e) => {
-        const fab = document.querySelector('.fab');
-        const fabMenu = document.getElementById('fabMenu');
-        
-        if (!fab.contains(e.target)) {
-            fabMenu.classList.remove('active');
+document.getElementById('descriptionModal').addEventListener('click', (e) => {
+    if (e.target.classList.contains('description-modal')) {
+        closeProductDescriptionModal();
+    }
+});
+
+// Close modals with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closePurchaseModal();
+        closeProductDescriptionModal();
+    }
+});
+
+// Floating Action Button functionality (بدون تغییر)
+function toggleFabMenu() {
+    const fabMenu = document.getElementById('fabMenu');
+    fabMenu.classList.toggle('active');
+}
+
+// Close FAB menu when clicking outside (بدون تغییر)
+document.addEventListener('click', (e) => {
+    const fab = document.querySelector('.fab');
+    const fabMenu = document.getElementById('fabMenu');
+    
+    if (!fab.contains(e.target)) {
+        fabMenu.classList.remove('active');
+    }
+});
+
+// Smooth scrolling for navigation links (بدون تغییر)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
         }
     });
-
-    // Smooth scrolling for navigation links (بدون تغییر)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
+});
 </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'985236fd71109f7e',t:'MTc1ODg4Mzk3OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
