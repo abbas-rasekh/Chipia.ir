@@ -575,95 +575,17 @@
         }
         
         .fab-instagram {
-    .floating-social-btn {
-      position: fixed;
-      right: 30px;
-      bottom: 90px;
-      z-index: 999;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .main-fab {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.18);
-      cursor: pointer;
-      transition: background 0.2s;
-      border: none;
-      outline: none;
-    }
-
-    .main-fab img {
-      width: 34px;
-      height: 34px;
-    }
-
-    .fab-menu {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      position: absolute;
-      bottom: 110px;
-      right: 30;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.2s;
-    }
-
-    .fab-menu.show {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .fab-menu a {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-      transition: background 0.2s, transform 0.2s;
-    }
-
-    .fab-menu a:hover {
-      background: #eee;
-      transform: scale(1.12);
-    }
-
-    .fab-menu img {
-      width: 60%;
-      height: auto;
-    }
-
-    .floating-caption {
-      margin-top: 8px;
-      font-size: 15px;
-      color: #666;
-      background: rgba(255,255,255,0.85);
-      border-radius: 8px;
-      padding: 2px 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.07);
-      font-family: 'Vazir', sans-serif;
-      text-align: center;
-      direction: rtl;
-      pointer-events: none;
-      user-select: none;
-         }  
-                 @media (max-width:600px) {
-      .floating-social-btn { right: 16px; bottom: 24px; }
-      .main-fab { width: 52px; height: 52px; }
-      .fab-menu a { width: 40px; height: 40px; }
-      .floating-caption { font-size: 13px; padding: 2px 8px;}
-                      
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+        }
+        
+        .fab-tiktok {
+            background: #000;
+        }
+        
+        .fab-youtube {
+            background: #ff0000;
+        }
+        
         /* Footer */
         footer {
     background: #e0c79a;
@@ -1065,24 +987,6 @@ function closePurchaseModal() {
     document.body.style.overflow = 'auto'; // Restore scrolling
 }
 
-           <div class="floating-social-btn">
-    <button class="main-fab" id="fabToggle" aria-label="شبکه‌های اجتماعی">
-      <img src="/images/chipia-logo.webp" alt="Social Media">
-    </button>
-    <div class="fab-menu" id="fabMenu">
-      <a href="https://instagram.com/chipia.ir" target="_blank" title="Instagram">
-        <img src="/images/instagram.webp" alt="Instagram" loading="lazy">
-      </a>
-      <a href="https://www.tiktok.com/@chipia.ir" target="_blank" title="TikTok">
-        <img src="/images/tiktok.webp" alt="TikTok" loading="lazy">
-      </a>
-      <a href="https://youtube.com/@chipia_ir" target="_blank" title="YouTube">
-        <img src="/images/youtube.webp" alt="YouTube" loading="lazy">
-      </a>
-    </div>
-    <div class="floating-caption">چیپیا در فجازی</div>
-  </div>
-                
 // NEW: Product Description Modal functionality
 function openProductDescriptionModal(productName, descriptionText) {
     const modal = document.getElementById('descriptionModal');
@@ -1123,19 +1027,22 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-<script defer>
-    const fabToggle = document.getElementById('fabToggle');
+// Floating Action Button functionality (بدون تغییر)
+function toggleFabMenu() {
     const fabMenu = document.getElementById('fabMenu');
-    fabToggle.addEventListener('click', function (e) {
-      fabMenu.classList.toggle('show');
-      e.stopPropagation();
-    });
-    document.addEventListener('click', function (e) {
-      if (!fabToggle.contains(e.target)) {
-        fabMenu.classList.remove('show');
-      }
-    });
-  </script>
+    fabMenu.classList.toggle('active');
+}
+
+// Close FAB menu when clicking outside (بدون تغییر)
+document.addEventListener('click', (e) => {
+    const fab = document.querySelector('.fab');
+    const fabMenu = document.getElementById('fabMenu');
+    
+    if (!fab.contains(e.target)) {
+        fabMenu.classList.remove('active');
+    }
+});
+
 // Smooth scrolling for navigation links (بدون تغییر)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
