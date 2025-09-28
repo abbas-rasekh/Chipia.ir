@@ -682,6 +682,42 @@
     .fab-menu a { width: 40px; height: 40px; }
     .floating-caption { font-size: 13px; padding: 2px 8px;}
 }
+             /* Adjustments for larger screens (Desktop) */
+@media (min-width: 769px) {
+    .floating-social-btn {
+        right: 50px; /* موقعیت دکمه از سمت راست در دسکتاپ */
+        bottom: 50px; /* موقعیت دکمه از پایین در دسکتاپ */
+    }
+
+    .fab-menu {
+        bottom: 80px; /* موقعیت منوی باز شده نسبت به دکمه اصلی در دسکتاپ */
+        /* right: 30px;  این خط لازم نیست چون fab-menu به صورت خودکار با .floating-social-btn تراز می‌شود */
+    }
+
+    .main-fab {
+        width: 70px;  /* اندازه بزرگتر برای دکمه اصلی در دسکتاپ */
+        height: 70px;
+    }
+
+    .main-fab img {
+        width: 40px; /* اندازه آیکون داخل دکمه اصلی */
+        height: 40px;
+    }
+
+    .fab-menu a {
+        width: 55px; /* اندازه دکمه‌های کوچک منو در دسکتاپ */
+        height: 55px;
+    }
+
+    .fab-menu img {
+        width: 65%; /* اندازه آیکون‌های داخل دکمه‌های منو */
+    }
+
+    .floating-caption {
+        font-size: 16px; /* فونت بزرگتر برای کپشن در دسکتاپ */
+        padding: 4px 16px;
+    }
+}
              
              footer {
     justify-content: center; /* وسط افقی */
