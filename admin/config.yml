@@ -2,7 +2,7 @@ backend:
   name: github
   repo: abbas-rasekh/chipia.ir
   branch: main
-  base_url: https://chipia.ir/
+  base_url: https://chipia.ir
   auth_endpoint: /api/auth
 
 media_folder: "static/images/uploads"
