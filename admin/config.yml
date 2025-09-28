@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: abbas-rasekh/chipia.ir
+  repo: abbas-rasekh/Chipia.ir
   branch: main
   base_url: https://chipia.ir
   auth_endpoint: /api/auth
