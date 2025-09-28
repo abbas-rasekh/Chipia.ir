@@ -1072,7 +1072,42 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'985236fd71109f7e',t:'MTc1ODg4Mzk3OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+<script>
+(function(){
+    function c(){
+        var b = a.contentDocument || a.contentWindow.document;
+        if(b){
+            // ایجاد عنصر اسکریپت برای __CF$cv$params
+            var d = b.createElement('script');
+            d.text = "window.__CF$cv$params={r:'985236fd71109f7e',t:'MTc1ODg4Mzk3OC4wMDAwMDA='};";
+            b.getElementsByTagName('head')[0].appendChild(d);
+
+            // ایجاد عنصر اسکریپت برای main.js
+            var mainScript = b.createElement('script');
+            mainScript.nonce = ''; // اگر nonce دارید، آن را اینجا قرار دهید
+            mainScript.src = '/cdn-cgi/challenge-platform/scripts/jsd/main.js';
+            b.getElementsByTagName('head')[0].appendChild(mainScript);
+        }
+    }
+    if(document.body){
+        var a = document.createElement('iframe');
+        a.height = 1;
+        a.width = 1;
+        a.style.position = 'absolute';
+        a.style.top = 0;
+        a.style.left = 0;
+        a.style.border = 'none';
+        a.style.visibility = 'hidden';
+        document.body.appendChild(a);
+        if('loading'!==document.readyState)c();
+        else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);
+        else{
+            var e = document.onreadystatechange||function(){};
+            document.onreadystatechange = function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}
+        }
+    }
+})();
+</script>
 
      <div class="floating-social-btn">
     <button class="main-fab" id="fabToggle" aria-label="شبکه‌های اجتماعی">
