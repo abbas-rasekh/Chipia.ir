@@ -591,102 +591,112 @@
                 padding: 1.5rem;
             }
 
+/* دکمه شناور همیشه مستقل از layout */
 .floating-social-btn {
     position: fixed !important;
     right: 30px !important;
     bottom: 90px !important;
-    z-index: 9999 !important;
+    z-index: 99999 !important;
     display: flex !important;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column !important;
+    align-items: center !important;
     text-align: right !important;
+    background: transparent !important;
 }
 
-.main-fab {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.18);
-    cursor: pointer;
-    transition: background 0.2s;
-    border: none;
-    outline: none;
+/* دکمه اصلی */
+.floating-social-btn .main-fab {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50% !important;
+    background: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.18) !important;
+    cursor: pointer !important;
+    border: none !important;
+    outline: none !important;
 }
 
-.main-fab img {
-    width: 34px;
-    height: 34px;
+/* آیکن داخل دکمه اصلی */
+.floating-social-btn .main-fab img {
+    width: 34px !important;
+    height: 34px !important;
     display: inline-block !important;
     margin: 0 !important;
 }
 
-.fab-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    position: absolute;
-    bottom: 110px;
-    right: 0; /* حالا دقیقاً کنار دکمه اصلی قرار می‌گیره */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s;
+/* منوی بازشونده */
+.floating-social-btn .fab-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    position: absolute !important;
+    bottom: 110px !important;
+    right: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: opacity 0.2s !important;
 }
 
-.fab-menu.show {
-    opacity: 1;
-    visibility: visible;
+/* وقتی منو باز میشه */
+.floating-social-btn .fab-menu.show {
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
-.fab-menu a {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    transition: background 0.2s, transform 0.2s;
+/* دکمه‌های داخل منو */
+.floating-social-btn .fab-menu a {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 50% !important;
+    background: #fff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10) !important;
+    transition: background 0.2s, transform 0.2s !important;
 }
 
-.fab-menu a:hover {
-    background: #eee;
-    transform: scale(1.12);
+/* hover */
+.floating-social-btn .fab-menu a:hover {
+    background: #eee !important;
+    transform: scale(1.12) !important;
 }
 
-.fab-menu img {
-    width: 60%;
-    height: auto;
+/* آیکن‌های داخل منو */
+.floating-social-btn .fab-menu img {
+    width: 60% !important;
+    height: auto !important;
     display: inline-block !important;
     margin: 0 !important;
 }
 
-.floating-caption {
-    margin-top: 8px;
-    font-size: 15px;
-    color: #666;
-    background: rgba(255,255,255,0.85);
-    border-radius: 8px;
-    padding: 2px 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.07);
-    font-family: 'Vazir', sans-serif;
-    text-align: center;
-    direction: rtl;
-    pointer-events: none;
-    user-select: none;
+/* کپشن */
+.floating-social-btn .floating-caption {
+    margin-top: 8px !important;
+    font-size: 15px !important;
+    color: #666 !important;
+    background: rgba(255,255,255,0.85) !important;
+    border-radius: 8px !important;
+    padding: 2px 12px !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.07) !important;
+    font-family: 'Vazir', sans-serif !important;
+    text-align: center !important;
+    direction: rtl !important;
+    pointer-events: none !important;
+    user-select: none !important;
 }
 
-/* Responsive adjustments for smaller screens */
+/* نسخه موبایل */
 @media (max-width:600px) {
     .floating-social-btn { right: 16px !important; bottom: 24px !important; }
-    .main-fab { width: 52px; height: 52px; }
-    .fab-menu a { width: 40px; height: 40px; }
-    .floating-caption { font-size: 13px; padding: 2px 8px; }
+    .floating-social-btn .main-fab { width: 52px !important; height: 52px !important; }
+    .floating-social-btn .fab-menu a { width: 40px !important; height: 40px !important; }
+    .floating-social-btn .floating-caption { font-size: 13px !important; padding: 2px 8px !important; }
 }
+
 
              
              footer {
