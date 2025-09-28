@@ -1,23 +1,19 @@
 backend:
-  # تنظیم برای استفاده از احراز هویت GitHub
   name: github
-  repo: 'abbas-rasekh/Chipia.ir' # مثال: 'chipia-ir/chipia-website'
-  branch: main # یا هر برنچی که محتوای شما در آن قرار دارد (معمولاً main یا master)
+  repo: yourusername/yourrepo
+  branch: main
+  base_url: https://yourdomain.com
+  auth_endpoint: /api/auth
 
-local_backend: true # برای تست محلی
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
 
-# تنظیمات اصلی CMS
-publish_mode: editorial_workflow
-site_url: https://chipia.ir/ 
-display_url: https://chipia.ir/
-
-# ... و سایر تنظیمات collections برای مدیریت محتوا (مانند قبل)
 collections:
-  - name: "pages"
-    label: "صفحات ثابت"
-    files:
-      - label: "صفحه بومرنگ"
-        name: "boomerang-page"
-        file: "boomerang.html"
-        fields:
-          # ... فیلدهای شما برای ویرایش محتوای HTML
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
