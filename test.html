@@ -616,13 +616,14 @@
 }
 
 .social-list {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(0, 1fr);
+  display: flex;
   gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
   align-items: center;
-  justify-content: end;
-  width: auto;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .social-list li {
@@ -633,18 +634,13 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 8px 10px;
+  background: rgba(255,255,255,0.9);
+  padding: 6px 10px;
   border-radius: 10px;
   text-decoration: none;
-  background: rgba(255,255,255,0.9);
   color: #111827;
+  transition: transform .15s ease, box-shadow .15s ease;
   border: 1px solid rgba(0,0,0,0.04);
-
-  min-width: 120px;   /* حداقل عرض */
-  max-width: 160px;   /* حداکثر عرض */
-  justify-content: center;
-  box-sizing: border-box;
-  text-align: center;
 }
 
 .social-link:hover,
@@ -678,12 +674,7 @@
   .social-list { justify-content: center; }
   .social-link { padding: 8px 12px; }
 }
-@media (max-width: 480px) {
-  .social-list {
-    grid-auto-columns: minmax(0, 1fr); /* کارت‌ها پهن‌تر و یکسان در موبایل */
-    justify-content: center;
-  }
-}
+
 
 
         /* Mobile Responsive */
