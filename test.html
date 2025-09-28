@@ -666,127 +666,6 @@ footer p {
                 padding: 1.5rem;
             }
 
-            /* دکمه شناور همیشه مستقل از layout */
-            .floating-social-btn {
-                position: fixed !important;
-                right: 30px !important;
-                bottom: 90px !important;
-                z-index: 99999 !important;
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: center !important;
-                text-align: right !important;
-                background: transparent !important;
-            }
-
-            /* دکمه اصلی */
-            .floating-social-btn .main-fab {
-                width: 60px !important;
-                height: 60px !important;
-                border-radius: 50% !important;
-                background: #ffffff !important;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-                box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18) !important;
-                cursor: pointer !important;
-                border: none !important;
-                outline: none !important;
-            }
-
-            /* آیکن داخل دکمه اصلی */
-            .floating-social-btn .main-fab img {
-                width: 34px !important;
-                height: 34px !important;
-                display: inline-block !important;
-                margin: 0 !important;
-            }
-
-            /* منوی بازشونده */
-            .floating-social-btn .fab-menu {
-                display: flex !important;
-                flex-direction: column !important;
-                gap: 12px !important;
-                position: absolute !important;
-                bottom: 110px !important;
-                right: 0 !important;
-                opacity: 0 !important;
-                visibility: hidden !important;
-                transition: opacity 0.2s !important;
-            }
-
-            /* وقتی منو باز میشه */
-            .floating-social-btn .fab-menu.show {
-                opacity: 1 !important;
-                visibility: visible !important;
-            }
-
-            /* دکمه‌های داخل منو */
-            .floating-social-btn .fab-menu a {
-                width: 48px !important;
-                height: 48px !important;
-                border-radius: 50% !important;
-                background: #fff !important;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10) !important;
-                transition: background 0.2s, transform 0.2s !important;
-            }
-
-            /* hover */
-            .floating-social-btn .fab-menu a:hover {
-                background: #eee !important;
-                transform: scale(1.12) !important;
-            }
-
-            /* آیکن‌های داخل منو */
-            .floating-social-btn .fab-menu img {
-                width: 60% !important;
-                height: auto !important;
-                display: inline-block !important;
-                margin: 0 !important;
-            }
-
-            /* کپشن */
-            .floating-social-btn .floating-caption {
-                margin-top: 8px !important;
-                font-size: 15px !important;
-                color: #666 !important;
-                background: rgba(255, 255, 255, 0.85) !important;
-                border-radius: 8px !important;
-                padding: 2px 12px !important;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07) !important;
-                font-family: 'Vazir', sans-serif !important;
-                text-align: center !important;
-                direction: rtl !important;
-                pointer-events: none !important;
-                user-select: none !important;
-            }
-
-            /* نسخه موبایل */
-            @media (max-width:600px) {
-                .floating-social-btn {
-                    right: 16px !important;
-                    bottom: 24px !important;
-                }
-
-                .floating-social-btn .main-fab {
-                    width: 52px !important;
-                    height: 52px !important;
-                }
-
-                .floating-social-btn .fab-menu a {
-                    width: 40px !important;
-                    height: 40px !important;
-                }
-
-                .floating-social-btn .floating-caption {
-                    font-size: 13px !important;
-                    padding: 2px 8px !important;
-                }
-            }
-
 
 
             footer {
@@ -1040,29 +919,6 @@ footer p {
         </div>
     </footer>
 
-
-
-
-
-    <div class="floating-social-btn">
-        <button class="main-fab" id="fabToggle" aria-label="شبکه‌های اجتماعی">
-            <img src="/images/chipia-logo.webp" alt="Social Media">
-        </button>
-        <div class="fab-menu" id="fabMenu">
-            <a href="https://instagram.com/chipia.ir" target="_blank" title="Instagram">
-                <img src="/images/instagram.webp" alt="Instagram" loading="lazy">
-            </a>
-            <a href="https://www.tiktok.com/@chipia.ir" target="_blank" title="TikTok">
-                <img src="/images/tiktok.webp" alt="TikTok" loading="lazy">
-            </a>
-            <a href="https://youtube.com/@chipia_ir" target="_blank" title="YouTube">
-                <img src="/images/youtube.webp" alt="YouTube" loading="lazy">
-            </a>
-        </div>
-        <div class="floating-caption">چیپیا در فجازی</div>
-    </div>
-
-
     <!-- Purchase Modal -->
     <div class="purchase-modal" id="purchaseModal">
         <div class="modal-content">
@@ -1258,22 +1114,6 @@ footer p {
         })();
     </script>
 
-    <script defer>
-        const fabToggle = document.getElementById('fabToggle');
-        const fabMenu = document.getElementById('fabMenu');
-
-        fabToggle.addEventListener('click', function(e) {
-            fabMenu.classList.toggle('show');
-            e.stopPropagation(); // Prevents the click from bubbling up to the document
-        });
-
-        document.addEventListener('click', function(e) {
-            // If the click is outside the main FAB and the menu, hide the menu
-            if (!fabToggle.contains(e.target) && !fabMenu.contains(e.target)) {
-                fabMenu.classList.remove('show');
-            }
-        });
-    </script>
 </body>
 
 </html>
