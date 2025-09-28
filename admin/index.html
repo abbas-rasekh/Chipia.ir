@@ -7,7 +7,13 @@
   </head>
   <body>
     <script>
-      CMS.init();
+      window.addEventListener("load", function () {
+        if (typeof CMS !== "undefined") {
+          CMS.init();
+        } else {
+          console.error("CMS is not defined");
+        }
+      });
     </script>
   </body>
 </html>
