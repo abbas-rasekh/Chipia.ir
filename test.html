@@ -405,8 +405,8 @@
         }
 
         .purchase-option:hover {
-            border-color: #2563eb;
-            background: #eff6ff;
+            border-color: #e0c79a;
+            background: #fee5b8;
             transform: translateY(-2px);
         }
 
@@ -1035,7 +1035,7 @@
     <div class="purchase-modal" id="purchaseModal">
         <div class="modal-content">
             <button class="modal-close" onclick="closePurchaseModal()">×</button>
-            <h3 class="modal-title" id="modalTitle">انتخاب فروشگاه</h3>
+            <h3 class="modal-title" id="modalTitle">انتخاب روش خرید/h3>
             <p class="modal-subtitle">برای خرید این محصول یکی از گزینه‌های زیر را انتخاب کنید:</p>
             <div class="purchase-options" id="purchaseOptionsContainer">
                 <!-- لینک‌های خرید اینجا قرار می‌گیرند -->
@@ -1084,17 +1084,17 @@
             purchaseOptionsContainer.innerHTML = '';
 
             const storeLinks = [{
-                    name: 'فروشگاه الف',
+                    name: 'خرید از دایرکت اینستاگرام (با تخفیف)',
                     icon: '🛒',
                     url: clickedButtonElement.dataset.storeA
                 },
                 {
-                    name: 'فروشگاه ب',
+                    name: 'خرید از باسلام',
                     icon: '🏪',
                     url: clickedButtonElement.dataset.storeB
                 },
                 {
-                    name: 'فروشگاه ج',
+                    name: 'خرید از دیجی‌کالا',
                     icon: '🛍️',
                     url: clickedButtonElement.dataset.storeC
                 },
