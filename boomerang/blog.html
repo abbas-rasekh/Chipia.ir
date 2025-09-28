@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>مجله | چیپیا</title>
+  <meta name="description" content="مجله چیپیا — نوشته‌ها و راهنماهای بومرنگ، آموزش، تاریخچه و معرفی محصولات." />
+  <link rel="icon" href="/images/favicon.jpg" />
+  <style>
+    /* پایه (هماهنگ با استایل صفحه اصلی) */
+    @font-face{font-family:'Vazir';src:url('/Fonts/Vazir.woff2') format('woff2');font-display:swap}
+    body{font-family:'Vazir', Tahoma, Arial, sans-serif;line-height:1.8;color:#222;background:#f8fafc;margin:0;padding:0;direction:rtl}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header.site-header{background:#fff;border-bottom:1px solid rgba(0,0,0,0.04);position:sticky;top:0;z-index:90}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+    .brand img{width:44px;height:auto;display:block}
+    .brand .title{font-weight:700;color:#1f2937}
+    nav.main-nav ul{display:flex;gap:18px;list-style:none;padding:0;margin:0}
+    nav.main-nav a{text-decoration:none;color:#333;font-weight:500}
+    /* Hero */
+    .hero{background:linear-gradient(180deg,#fff 0,#fff 100%);padding:28px 0;margin-bottom:6px}
+    .hero h1{font-size:1.45rem;margin:0;color:#111}
+    .hero p{margin-top:8px;color:#555}
+    /* Layout */
+    .layout{display:grid;grid-template-columns:1fr 320px;gap:28px;align-items:start}
+    @media (max-width:980px){.layout{grid-template-columns:1fr}}
+    /* Posts list */
+    .posts{display:flex;flex-direction:column;gap:18px}
+    article.post{background:#fff;border-radius:12px;padding:18px;border:1px solid #eef2f6;box-shadow:0 6px 18px rgba(0,0,0,0.03);display:flex;gap:16px;align-items:flex-start}
+    .post .thumb{width:140px;flex-shrink:0;border-radius:8px;overflow:hidden}
+    .post .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .post .meta{flex:1}
+    .post h2{font-size:1.05rem;margin:0 0 6px 0;color:#111}
+    .post p.excerpt{margin:0;color:#555;font-size:0.95rem}
+    .post .meta .meta-line{margin-top:10px;color:#6b7280;font-size:0.86rem}
+    .read-more{display:inline-block;margin-top:12px;padding:8px 12px;border-radius:10px;background:#2563eb;color:white;text-decoration:none;font-weight:600}
+    /* Sidebar */
+    aside.sidebar{position:relative}
+    .card{background:#fff;border-radius:12px;padding:16px;border:1px solid #eef2f6}
+    .search{display:flex;gap:8px;margin-bottom:12px}
+    .search input{flex:1;padding:10px;border-radius:10px;border:1px solid #e5e7eb}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{background:#fee5b8;padding:6px 10px;border-radius:999px;font-size:0.9rem;color:#111}
+    /* Pagination simple */
+    .pagination{display:flex;gap:8px;justify-content:center;margin-top:20px}
+    .page-btn{padding:8px 12px;border-radius:8px;border:1px solid #e5e7eb;background:#fff;text-decoration:none;color:#111}
+    footer.site-footer{margin-top:36px;padding:24px 0;background:#e0c79a;color:#111}
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="https://chipia.ir/">
+        <img src="/images/chipia-logo.webp" alt="لوگوی چیپیا" />
+        <div>
+          <div class="title">چیپیا</div>
+          <div style="font-size:0.85rem;color:#6b7280">مجله و آموزش بومرنگ</div>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="اصلی">
+        <ul>
+          <li><a href="https://chipia.ir/">خانه</a></li>
+          <li><a href="/blog.html" aria-current="page">مجله</a></li>
+          <li><a href="#faq" onclick="location.href='/#faq'">سوالات</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>مجله چیپیا</h1>
+      <p>نوشته‌ها، آموزش‌ها و نکات فنی درباره بومرنگ؛ آخرین مطالب را اینجا دنبال کنید.</p>
+    </section>
+
+    <div class="layout">
+      <!-- Posts column -->
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <h2 style="margin:0">آخرین مطالب</h2>
+          <small id="postsCount" style="color:#6b7280"></small>
+        </div>
+
+        <section class="posts" id="posts">
+          <!-- روش A: می‌توانید به‌طور دستی این بلاک‌ها را اضافه کنید (نمونه) -->
+          <!--
+          <article class="post">
+            <div class="thumb"><img src="/images/post-sample.webp" alt="عنوان مطلب" /></div>
+            <div class="meta">
+              <h2>عنوان مطلب نمونه</h2>
+              <p class="excerpt">چکیده‌ای کوتاه از مطلب که خواننده را برای کلیک آماده می‌کند...</p>
+              <div class="meta-line">۱۴ خرداد ۱۴۰۲ · دسته‌بندی: آموزش</div>
+              <a class="read-more" href="/posts/sample-post.html">ادامه خواندن</a>
+            </div>
+          </article>
+          -->
+        </section>
+
+        <div class="pagination" id="pagination"></div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="card">
+          <div style="font-weight:700;margin-bottom:8px">جستجو در مجله</div>
+          <div class="search">
+            <input type="search" id="searchInput" placeholder="جستجو..." />
+            <button onclick="applySearch()" style="padding:8px 12px;border-radius:10px;background:#2563eb;color:#fff;border:none">جستجو</button>
+          </div>
+
+          <div style="margin-top:12px">
+            <div style="font-weight:700;margin-bottom:8px">دسته‌ها</div>
+            <div class="tags" id="tagsList">
+              <!-- تگ‌ها از JS تولید می‌شوند -->
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <div style="font-weight:700;margin-bottom:8px">درباره</div>
+          <div style="color:#555;font-size:0.95rem">
+            این صفحه محلی برای آرشیو مقالات و یادداشت‌های مرتبط با بومرنگ است. برای افزودن پست جدید کافی است یکی از روش‌های زیر را اجرا کنید.
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>
+          <strong>چیپیا</strong>
+          <div style="font-size:0.95rem">بهترین بومرنگ‌ها با عشق و دقت</div>
+        </div>
+        <div style="color:#111">© تمام حقوق محفوظ است</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    /****************************************************************************************
+     روش‌های افزودن پست:
+     - روش A (دستی در HTML): داخل المان با id="posts" یک <article class="post"> اضافه کنید.
+     - روش B (پویای JS): هر پست را داخل آرایهٔ posts قرار دهید و این اسکریپت آن‌ها را رندر می‌کند.
+       برای افزودن دستی در این حالت، کافی است یک آبجکت جدید به آرایه اضافه کنید:
+         posts.unshift({
+           id: 'my-new-post',
+           title: 'عنوان جدید',
+           excerpt: 'چکیده کوتاه ...',
+           date: '۱۴ مهر ۱۴۰۴',
+           category: 'آموزش',
+           image: '/images/my-post.webp',
+           url: '/posts/my-new-post.html',
+           tags: ['آموزش','پرتاب']
+         });
+       سپس صفحه را رفرش کنید یا تابع renderPosts() را صدا بزنید.
+    *****************************************************************************************/
+
+    const postsPerPage = 6;
+    const posts = [
+      // نمونه پست‌ها (ابتدا چند نمونه برای نمایش)
+      {
+        id: 'boomerang-intro',
+        title: 'بومرنگ چیست و چگونه کار می‌کند؟',
+        excerpt: 'یک معرفی ساده و تصویری از اصول آیرودینامیک بومرنگ و دلیل بازگشت آن.',
+        date: '۱۰ تیر ۱۴۰۳',
+        category: 'آموزش',
+        image: '/images/boomerang.webp',
+        url: '/posts/boomerang-intro.html',
+        tags: ['آموزش','فیزیک']
+      },
+      {
+        id: 'make-your-first',
+        title: 'چگونه یک بومرنگ ساده بسازیم',
+        excerpt: 'مراحل ساخت یک بومرنگ چوبی ساده با ابزار معمولی و نکات تعادل‌دهی.',
+        date: '۲۰ مرداد ۱۴۰۳',
+        category: 'آموزش',
+        image: '/images/post-sample.webp',
+        url: '/posts/make-your-first.html',
+        tags: ['DIY','آموزش']
+      }
+    ];
+
+    // --- رندر پست‌ها ---
+    let currentPage = 1;
+
+    function renderPosts() {
+      const container = document.getElementById('posts');
+      container.innerHTML = '';
+
+      const filtered = applyFilterArray(posts);
+      document.getElementById('postsCount').textContent = filtered.length ? `${filtered.length} مطلب` : '';
+
+      const start = (currentPage - 1) * postsPerPage;
+      const pageItems = filtered.slice(start, start + postsPerPage);
+
+      if (pageItems.length === 0) {
+        container.innerHTML = '<div style="padding:18px;border-radius:12px;background:#fff;border:1px solid #eef2f6;color:#555">مطلبی برای نمایش وجود ندارد.</div>';
+      } else {
+        pageItems.forEach(p => {
+          const art = document.createElement('article');
+          art.className = 'post';
+          art.innerHTML = `
+            <div class="thumb"><a href="${p.url}"><img src="${p.image}" alt="${escapeHtml(p.title)}"></a></div>
+            <div class="meta">
+              <h2><a href="${p.url}" style="color:inherit;text-decoration:none">${escapeHtml(p.title)}</a></h2>
+              <p class="excerpt">${escapeHtml(p.excerpt)}</p>
+              <div class="meta-line">${p.date} · دسته: ${escapeHtml(p.category)}</div>
+              <a class="read-more" href="${p.url}">ادامه خواندن</a>
+            </div>
+          `;
+          container.appendChild(art);
+        });
+      }
+
+      renderPagination(filtered.length);
+      renderTags();
+    }
+
+    function renderPagination(totalItems) {
+      const pages = Math.ceil(totalItems / postsPerPage) || 1;
+      const wrap = document.getElementById('pagination');
+      wrap.innerHTML = '';
+      for (let i = 1; i <= pages; i++) {
+        const a = document.createElement('a');
+        a.className = 'page-btn';
+        a.textContent = i;
+        a.href = '#';
+        if (i === currentPage) a.style.background = '#2563eb', a.style.color = '#fff';
+        a.addEventListener('click', (e) => { e.preventDefault(); currentPage = i; renderPosts(); });
+        wrap.appendChild(a);
+      }
+    }
+
+    // --- تگ‌ها ---
+    function renderTags() {
+      const tagsSet = new Set();
+      posts.forEach(p => (p.tags || []).forEach(t => tagsSet.add(t)));
+      const tagsList = Array.from(tagsSet);
+      const box = document.getElementById('tagsList');
+      box.innerHTML = '';
+      tagsList.forEach(t => {
+        const el = document.createElement('button');
+        el.type = 'button';
+        el.className = 'tag';
+        el.textContent = t;
+        el.onclick = () => { document.getElementById('searchInput').value = t; applySearch(); };
+        box.appendChild(el);
+      });
+    }
+
+    // --- جستجو و فیلتر ---
+    function applyFilterArray(arr) {
+      const q = (document.getElementById('searchInput').value || '').trim().toLowerCase();
+      if (!q) return arr.slice();
+      return arr.filter(p => {
+        return (p.title + ' ' + p.excerpt + ' ' + (p.tags||[]).join(' ') + ' ' + (p.category||'')).toLowerCase().includes(q);
+      });
+    }
+
+    function applySearch() {
+      currentPage = 1;
+      renderPosts();
+    }
+
+    // --- ابزار کمکی ---
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, function (m) {
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];
+      });
+    }
+
+    // --- شروع ---
+    renderPosts();
+  </script>
+</body>
+</html>
