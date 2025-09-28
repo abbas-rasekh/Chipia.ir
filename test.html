@@ -553,43 +553,126 @@
         }
 
         /* Footer */
-       footer {
+      footer {
   background: #e0c79a;
-  color: #333;
-  display: flex;
-  justify-content: center;  
-  align-items: center;      
+  color: #222;
   padding: 2rem 0;
-  text-align: center;
+  border-top: 1px solid rgba(0,0,0,0.04);
 }
 
-footer .container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 1rem;
+.footer-inner {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 20px;
 }
 
-footer p {
-  margin: 0 0 1rem 0;
-  font-size: 1rem;
-  line-height: 1.6;
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 220px;
 }
 
-/* آیکن‌های شبکه اجتماعی */
-.social-icons {
-  margin-top: 10px;
-}
-
-.social-icons a {
-  margin: 0 10px;
-  font-size: 24px;
-  color: #333;
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
   text-decoration: none;
-  transition: color 0.3s;
+  color: inherit;
 }
 
-.social-icons a:hover {
-  color: #ff4081; /* رنگ دلخواه برای هاور */
+.footer-logo {
+  width: 48px;
+  height: auto;
+  display: block;
+}
+
+.footer-site-name {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #1f2937;
+}
+
+.footer-copy {
+  margin-top: 6px;
+  color: #333;
+  line-height: 1.6;
+  max-width: 520px;
+  text-align: right;
+}
+
+/* Social */
+.footer-social {
+  text-align: right;
+}
+
+.footer-social-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+.social-list {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.social-list li {
+  margin: 0;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255,255,255,0.9);
+  padding: 6px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #111827;
+  transition: transform .15s ease, box-shadow .15s ease;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.social-link:hover,
+.social-link:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  outline: none;
+}
+
+.social-icon {
+  width: 22px;
+  height: auto;
+  display: block;
+}
+
+.social-name {
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  .footer-left { text-align: center; }
+  .footer-copy { text-align: center; margin: 0.5rem auto 0; }
+  .footer-social { margin-top: 1rem; }
+  .social-list { justify-content: center; }
+  .social-link { padding: 8px 12px; }
 }
 
 
@@ -901,10 +984,52 @@ footer p {
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>«ما بر آنیم تا بهترین بومرنگ‌ها را با عشق و دقت در اختیار شما قرار دهیم.»</p>
-        </div>
-    </footer>
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <a href="https://chipia.ir/" class="footer-brand" aria-label="Chipia">
+        <img src="/images/chipia-logo.webp" alt="لوگوی چیپیا" class="footer-logo">
+        <span class="footer-site-name">چیپیا</span>
+      </a>
+      <p class="footer-copy">ما بر آنیم تا بهترین بومرنگ‌ها را با عشق و دقت در اختیار شما قرار دهیم.</p>
+    </div>
+
+    <div class="footer-social">
+      <h4 class="footer-social-title">ما را دنبال کنید</h4>
+      <ul class="social-list" role="list">
+        <li>
+          <a href="https://instagram.com/chipia.ir" target="_blank" rel="noopener noreferrer" aria-label="Chipia on Instagram" class="social-link">
+            <img src="/images/instagram.webp" alt="Instagram" class="social-icon">
+            <span class="social-name">اینستاگرام</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.tiktok.com/@chipia.ir" target="_blank" rel="noopener noreferrer" aria-label="Chipia on TikTok" class="social-link">
+            <img src="/images/tiktok.webp" alt="TikTok" class="social-icon">
+            <span class="social-name">تیک‌تاک</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://youtube.com/@chipia_ir" target="_blank" rel="noopener noreferrer" aria-label="Chipia on YouTube" class="social-link">
+            <img src="/images/youtube.webp" alt="YouTube" class="social-icon">
+            <span class="social-name">یوتیوب</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://x.com/chipia_ir" target="_blank" rel="noopener noreferrer" aria-label="Chipia on X" class="social-link">
+            <img src="/images/x.webp" alt="X" class="social-icon">
+            <span class="social-name">ایکس</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/chipia.ir" target="_blank" rel="noopener noreferrer" aria-label="Chipia on Facebook" class="social-link">
+            <img src="/images/facebook.webp" alt="Facebook" class="social-icon">
+            <span class="social-name">فیس‌بوک</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
 
     <!-- Purchase Modal -->
     <div class="purchase-modal" id="purchaseModal">
