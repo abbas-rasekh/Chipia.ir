@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
     <title>Content Manager</title>
-    <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
   </head>
   <body>
-    <script>
-      window.addEventListener("load", function () {
-        if (typeof CMS !== "undefined") {
-          CMS.init();
-        } else {
-          console.error("CMS is not defined");
-        }
-      });
-    </script>
+    <!-- بارگذاری Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </body>
 </html>
