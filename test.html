@@ -553,18 +553,45 @@
         }
 
         /* Footer */
-        footer {
-            background: #e0c79a;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            /* وسط افقی */
-            align-items: center;
-            /* وسط عمودی */
-            padding: 2rem 0;
-            text-align: center;
-            /* برای اطمینان */
-        }
+       footer {
+  background: #e0c79a;
+  color: #333;
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  padding: 2rem 0;
+  text-align: center;
+}
+
+footer .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+footer p {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* آیکن‌های شبکه اجتماعی */
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  font-size: 24px;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ff4081; /* رنگ دلخواه برای هاور */
+}
+
 
 
         /* Mobile Responsive */
@@ -594,19 +621,18 @@
                 padding: 0 15px;
             }
 
-            footer {
+           /* footer {
                 justify-content: center;
-                /* وسط افقی */
+                /* وسط افقی 
                 align-items: center;
-                /* وسط عمودی */
+                /* وسط عمودی 
                 text-align: center;
-                /* برای اطمینان */
+                /* برای اطمینان 
             }
-
             footer p {
-                /* این خط را اضافه کنید */
+                /* این خط را اضافه کنید 
                 text-align: center;
-            }
+            }*/
 
             .product-actions {
                 flex-direction: column;
